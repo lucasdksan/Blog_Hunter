@@ -6,17 +6,17 @@ const Data_Info = [
     {
         image: Estudos,
         text: 'Engenharia Mecatrônica.',
-        title: 'Estudos'
+        title: 'Graduação'
     },
     {
         image: Lazer,
         text: 'Programação Web e Eletrônica',
-        title: 'Lazer'
+        title: 'Estudo Extra'
     },
     {
         image: Game,
-        text: 'Valorant, Aim Lab e Deck Heroes',
-        title: 'Jogos durante o Lazer'
+        text: 'Valorant, Yu-Gi-Oh! e Deck Heroes',
+        title: 'Lazer'
     }
 ];
 export default Data_Info;
