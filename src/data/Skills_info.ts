@@ -34,6 +34,10 @@ const Data_Skills = [
     {
         skill: 'arduino',
         title: 'Arduino'
+    },
+    {
+        skill: 'node',
+        title: 'Node Js',
     }
 ]
 

@@ -8,13 +8,15 @@ import { Container,
          HTMLIcon,
          JSIcon,
          ReactIcon,
-         TSIcon
+         TSIcon,
+         NodeIcon
         } from '../styles/components/Skills_Card';
 
 interface Props {
     skill: string;
     title: string;
 }
+
 
 const Skills_Card: React.FC<Props> = ({ title, skill })=>{
     function SelectIcon(){
@@ -42,9 +44,18 @@ const Skills_Card: React.FC<Props> = ({ title, skill })=>{
         else if(skill === 'React'){
             return <ReactIcon/>;
         }
+        else {
+            return <NodeIcon/>
+        }
     }
     return(
-        <Container>
+        <Container
+            whileHover={{
+                            y: -5,
+                            boxShadow: "3px 5px 6px 2px rgba(0, 0, 0, 0.2)",
+                            backgroundColor: "#ced4da",
+                        }}
+        >
             {SelectIcon()}
             <Title>
                 {
