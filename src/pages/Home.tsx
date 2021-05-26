@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import TargetEnd from '../components/TargetEnd';
 import UpBotton from '../components/UpButton';
+import SkillCard from '../components/Skills_Card';
 import { Container,
          Content, 
          FirstBlock, 
@@ -16,9 +17,32 @@ import { Container,
          ThirdBlock,
          TextThird,
          FourthBlock,
-         TextFourth } from '../styles/pages/Home';
+         TextFourth, 
+         SubTextFourth,
+         AreaSkills,
+         SkillsFull,
+         CoffeeContent, 
+         CoffeeIcon,
+         CoffeeTextCard, 
+         CoffeeTitle} from '../styles/pages/Home';
+import CoffeeI from '../assets/Coffe.png';
 import Data from '../data/CardData';
 import Data_Info from '../data/Card_Info';
+import DataSkill from '../data/Skills_info';
+
+const HeartCoffee = {
+    hidden: {
+      backgroundColor: "#f5f3f4"
+    },
+    hover:{
+      scale: 1.1,
+      backgroundColor: "#d00000",
+      transition: {
+        durantion: 1,
+        yoyo: Infinity,
+      }
+    }
+  };
 
 const Home = ()=>{
     return(
@@ -32,7 +56,7 @@ const Home = ()=>{
                     <TextIntro>
                         Saudações, sou Lucas da Silva Leoncio.
                     </TextIntro>
-                    <Text>Bem vindos ao meu Blog, aqui vou apresentar meus projetos, resultados dos meus estudos e dicas.</Text>
+                    <Text>Bem vindos ao meu Blog. Aqui vou apresentar meus projetos, resultados dos meus estudos e dicas.</Text>
                 </FirstBlock>
                 <SecondBlock>
                     <TextSecond>
@@ -54,12 +78,40 @@ const Home = ()=>{
                                 return <Card text={text} image={image} title={title} />
                             })
                         }
+                        <CoffeeContent
+                            variants={HeartCoffee}
+                            whileHover='hover'
+                        >
+                            <CoffeeTitle>Café</CoffeeTitle>
+                            <CoffeeIcon
+                                src={CoffeeI}
+                            />
+                            <CoffeeTextCard>
+                                Café é vida, energia constante!
+                            </CoffeeTextCard>
+                        </CoffeeContent>
                     </AreaCard>
                 </ThirdBlock>
                 <FourthBlock>
                     <TextFourth>
-                        Logo abaixo minhas redes sociais.
+                        Skills
                     </TextFourth>
+                    <AreaSkills>
+                        <SubTextFourth>Linguagens e tecnologias que domino</SubTextFourth>
+                        <SkillsFull>
+                            {
+                                DataSkill.map(itens =>{
+                                    return (
+                                        <SkillCard 
+                                            skill={itens.skill} 
+                                            title={itens.title}
+                                            key={itens.title}
+                                        />
+                                    );
+                                })
+                            }
+                        </SkillsFull>
+                    </AreaSkills>
                 </FourthBlock>
             </Content>
             <UpBotton/>

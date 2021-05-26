@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
     display: flex;
@@ -84,7 +85,7 @@ export const ThirdBlock = styled.div`
     justify-content: flex-start;
     padding: 20px 10px;
     width: 100%;
-    height: 550px;
+    height: 580px;
     background-color: #353535;
 `;
 export const TextThird = styled.h1`
@@ -95,20 +96,77 @@ export const TextThird = styled.h1`
     color: #fff;
     margin-bottom: 20px;
 `;
-export const FourthBlock = styled.div`
+export const CoffeeContent = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    padding: 50px 10px;
+    border-radius: 10px;
+    width: 255px;
+    height: 355px;
+    background-color: #f5f3f4;
+    box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.2);
+`;
+export const CoffeeIcon = styled.img`
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+`;
+export const CoffeeTextCard = styled.h2`
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Roboto';
+`;
+export const CoffeeTitle = styled.span`
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Roboto';
+`;
+export const FourthBlock = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    padding: 20px 10px;
+    padding: 40px 60px;
     width: 100%;
-    height: 100px;
+    height: 600px;
     background-color: #fff;
 `;
 export const TextFourth = styled.span`
-    font-size: 25px;
+    font-size: 35px;
     font-family: 'Roboto';
-    font-style: italic;
+    font-weight: bold;;
+    font-style: normal;
     text-align: start;
-    color: #7400b8;
+    color: #353535;
+`;
+export const SubTextFourth = styled.span`
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    text-align: start;
+    color: #353535;
+    margin-left: 50px;
+    margin-bottom: 30px;
+`;
+export const AreaSkills = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+`;
+export const SkillsFull = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    height: 100%;
 `;
