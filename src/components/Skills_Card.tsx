@@ -17,10 +17,18 @@ import { Container,
 interface Props {
     skill: string;
     title: string;
+    link?: string;
 }
 
 
-const Skills_Card: React.FC<Props> = ({ title, skill })=>{
+const Skills_Card: React.FC<Props> = ({ title, skill, link })=>{
+    function openLink(links:string){
+        if(link === ''){
+            return null
+        } else {
+            window.open(links);
+        }
+    }
     function SelectIcon(){
         if(skill === 'arduino'){
             return <ArduinoIcon />;
@@ -63,6 +71,7 @@ const Skills_Card: React.FC<Props> = ({ title, skill })=>{
                             boxShadow: "3px 5px 6px 2px rgba(0, 0, 0, 0.2)",
                             backgroundColor: "#ced4da",
                         }}
+            onClick={()=> openLink(link as string) }
         >
             {SelectIcon()}
             <Title>

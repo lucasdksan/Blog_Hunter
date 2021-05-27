@@ -22,6 +22,9 @@ export const Container = styled(motion.div)`
     height: 100px;
     background-color: #f5f3f4;
     box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    &:hover{
+        cursor: pointer;
+    }
 `;
 export const Title = styled.h1`
     font-size: 12px;

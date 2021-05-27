@@ -107,6 +107,7 @@ const Home = ()=>{
                                         <SkillCard 
                                             skill={itens.skill} 
                                             title={itens.title}
+                                            link={itens.link}
                                             key={itens.title}
                                         />
                                     );
@@ -121,6 +122,7 @@ const Home = ()=>{
                                         <SkillCard
                                             skill={itens.skill}
                                             title={itens.title}
+                                            link={itens.link}
                                             key={itens.title}
                                         />
                                     );
