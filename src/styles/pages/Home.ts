@@ -170,3 +170,13 @@ export const SkillsFull = styled.div`
     width: 100%;
     height: 100%;
 `;
+export const NextSkills = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 10px 450px;
+`;

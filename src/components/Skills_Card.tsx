@@ -9,7 +9,9 @@ import { Container,
          JSIcon,
          ReactIcon,
          TSIcon,
-         NodeIcon
+         NodeIcon,
+         NextIcon,
+         ThreeIcon
         } from '../styles/components/Skills_Card';
 
 interface Props {
@@ -44,8 +46,14 @@ const Skills_Card: React.FC<Props> = ({ title, skill })=>{
         else if(skill === 'React'){
             return <ReactIcon/>;
         }
-        else {
+        else if(skill === 'node'){
             return <NodeIcon/>
+        }
+        else if(skill === 'next'){
+            return <NextIcon/>
+        }
+        else{
+            return <ThreeIcon/>
         }
     }
     return(

@@ -8,7 +8,9 @@ import { SiJavascript,
          SiReact, 
          SiElectron,
          SiArduino,
-         SiNodeDotJs } from 'react-icons/si';
+         SiNodeDotJs,
+         SiWebgl,
+         SiNextDotJs } from 'react-icons/si';
 
 export const Container = styled(motion.div)`
     display: flex;
@@ -67,6 +69,16 @@ export const ArduinoIcon = styled(SiArduino)`
 `;
 export const NodeIcon = styled(SiNodeDotJs)`
     color: #0d731e;
+    font-size: 40px;
+    margin-bottom: 10px;
+`;
+export const NextIcon = styled(SiNextDotJs)`
+    color: #000;
+    font-size: 40px;
+    margin-bottom: 10px;
+`;
+export const ThreeIcon = styled(SiWebgl)`
+    color: #000;
     font-size: 40px;
     margin-bottom: 10px;
 `;

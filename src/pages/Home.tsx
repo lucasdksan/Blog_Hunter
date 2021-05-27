@@ -24,11 +24,13 @@ import { Container,
          CoffeeContent, 
          CoffeeIcon,
          CoffeeTextCard, 
-         CoffeeTitle} from '../styles/pages/Home';
+         CoffeeTitle,
+         NextSkills } from '../styles/pages/Home';
 import CoffeeI from '../assets/Coffe.png';
 import Data from '../data/CardData';
 import Data_Info from '../data/Card_Info';
 import DataSkill from '../data/Skills_info';
+import NextDataSkill from '../data/Next_Skills';
 
 const HeartCoffee = {
     hidden: {
@@ -111,6 +113,20 @@ const Home = ()=>{
                                 })
                             }
                         </SkillsFull>
+                        <SubTextFourth>Linguagens e tecnologias que estou estudando</SubTextFourth>
+                        <NextSkills>
+                            {
+                                NextDataSkill.map(itens => {
+                                    return(
+                                        <SkillCard
+                                            skill={itens.skill}
+                                            title={itens.title}
+                                            key={itens.title}
+                                        />
+                                    );
+                                })
+                            }
+                        </NextSkills>
                     </AreaSkills>
                 </FourthBlock>
             </Content>
