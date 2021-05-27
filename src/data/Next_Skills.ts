@@ -2,7 +2,7 @@ const NextSkills = [
     {
         skill: 'next',
         title: 'Next Js',
-        link: '',
+        link: 'https://github.com/lucasdksan/Blog_Nextjs',
     },
     {
         skill: 'three',

@@ -24,7 +24,7 @@ interface Props {
 const Skills_Card: React.FC<Props> = ({ title, skill, link })=>{
     function openLink(links:string){
         if(link === ''){
-            return null
+            return alert('Ainda em desenvolvimento...');
         } else {
             window.open(links);
         }
