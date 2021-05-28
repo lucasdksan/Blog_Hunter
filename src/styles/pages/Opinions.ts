@@ -42,13 +42,12 @@ export const TitleContent = styled.div`
 `;
 export const Title = styled.h1`
     font-size: 30px;
-    margin-bottom: 10px;
     font-family: 'Roboto';
     color: #fff;
 `;
 export const YoutubeIcon = styled(AiFillYoutube)`
     color: #FF0000;
-    font-size: 40px;
+    font-size: 45px;
     margin-right: 10px;
 `;
 export const MiniTitle = styled.h2`
