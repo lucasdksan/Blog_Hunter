@@ -2,7 +2,6 @@ import React from 'react';
 import { Container,
          Icon,
          TextCard,
-         Link,
          YTIcon } from '../styles/components/CardYouTube';
 
 interface Props{
@@ -12,18 +11,27 @@ interface Props{
 }
 
 const CardYouTube:React.FC<Props> = ({ image, text, link })=>{
+    function openLink(links:string){
+        if(link === ''){
+            return alert('Ainda em desenvolvimento...');
+        } else {
+            window.open(links);
+        }
+    }
     return(
-        <Container>
+        <Container
+            onClick={()=> openLink(link)}
+            whileHover={{
+                y: -10,
+                boxShadow: "10px 20px 6px 2px rgba(0, 0, 0, 0.2)",
+                backgroundColor: "#ced4da",
+            }}
+        >
             <TextCard>{text}</TextCard>
             <Icon
                 src={image}
             />
-            <Link
-                href={link}
-                target='_blanck'
-            >
                 <YTIcon/>
-            </Link>
         </Container>
     );
 }

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { AiFillYoutube } from 'react-icons/ai';
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,6 +13,9 @@ export const Container = styled.div`
     height: 350px;
     background-color: #f5f3f4;
     box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.2);
+    &:hover{
+        cursor: pointer;
+    }
 `;
 export const Icon = styled.img`
     width: 160px;
@@ -23,9 +27,6 @@ export const TextCard = styled.h2`
     font-size: 22px;
     text-align: center;
     font-family: 'Roboto';
-`;
-export const Link = styled.a`
-    text-decoration: none;
 `;
 export const YTIcon = styled(AiFillYoutube)`
     color: #FF0000;
