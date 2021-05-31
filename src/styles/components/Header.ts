@@ -25,6 +25,7 @@ export const Menu = styled.nav`
     align-items: center;
     height: 60px;
     width: 400px;
+    padding: 0px 50px;
 `;
 export const NameMenu = styled(Link)`
     font-size: 16px;
