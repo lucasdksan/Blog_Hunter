@@ -10,7 +10,7 @@ export const Container = styled.div`
     height: 100%;
     width: 100%;
 `;
-export const Content = styled.div`
+export const Content = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@ export const Content = styled.div`
     height: 100%;
     background-color: #fff;
 `;
-export const FirstBlock = styled.div`
+export const FirstBlock = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +50,7 @@ export const Text = styled.h2`
     text-align: start;
     color: #979dac;
 `;
-export const SecondBlock = styled.div`
+export const SecondBlock = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,7 +68,7 @@ export const TextSecond = styled.h1`
     color: #353535;
     margin-bottom: 20px;
 `;
-export const AreaCard = styled.div`
+export const AreaCard = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -78,7 +78,7 @@ export const AreaCard = styled.div`
     width: 100%;
     height: 100%;
 `;
-export const ThirdBlock = styled.div`
+export const ThirdBlock = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,7 +125,7 @@ export const CoffeeTitle = styled.span`
     text-align: center;
     font-family: 'Roboto';
 `;
-export const FourthBlock = styled.div`
+export const FourthBlock = styled.section`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -152,7 +152,7 @@ export const SubTextFourth = styled.span`
     margin-left: 50px;
     margin-bottom: 30px;
 `;
-export const AreaSkills = styled.div`
+export const AreaSkills = styled.nav`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;

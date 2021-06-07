@@ -11,7 +11,7 @@ export const Container = styled.div`
     height: 100%;
     width: 100%;
 `;
-export const Content = styled.div`
+export const Content = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@ export const Content = styled.div`
     height: 100%;
     background-color: #fff;
 `;
-export const FirstBlock = styled.div`
+export const FirstBlock = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
