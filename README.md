@@ -1,1 +1,1 @@
-# Blog Fury_Mechatronic :computer:
+# Blog Hunter :computer:
