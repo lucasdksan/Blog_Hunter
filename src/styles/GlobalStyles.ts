@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import themes from './colors/themes';
 
 export default createGlobalStyle`
     *{
@@ -12,10 +13,10 @@ export default createGlobalStyle`
     }
     body::-webkit-scrollbar{
         width: 5px;
-        background-color: #e9ecef;
+        background-color: ${themes.colors.main_white};
     }
     body::-webkit-scrollbar-thumb{
-        background: #353535;
+        background: ${themes.colors.main_sub_gray};
     }
     #root{
         width: 100%;
