@@ -1,17 +1,23 @@
 import React from 'react';
 
-import { Container, AreaTitle, IconHello, Title, Description } from '../styles/components/BlockText';
+import { Container, 
+        AreaTitle, 
+        Title, 
+        Description } from '../styles/components/BlockText';
 
 interface Props {
-    title?: string;
-    text?: string;
+    title: string;
+    text: string;
+    height?: string;
 }
 
-const BlockText:React.FC <Props>= ({ text, title })=>{
+const BlockText:React.FC <Props>= ({ text, title, height="300px", children })=>{
     return(
-        <Container>
+        <Container
+            heightExtern={height}
+        >
             <AreaTitle>
-                <IconHello/>
+                {children}
                 <Title>{title}</Title>
             </AreaTitle>
             <Description>

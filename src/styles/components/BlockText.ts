@@ -1,17 +1,21 @@
 import styled from 'styled-components';
-import { CgHello } from 'react-icons/cg';
 import themes from '../colors/themes';
 
-export const Container = styled.article`
+interface ContainerProps{
+    heightExtern: string;
+}
+
+export const Container = styled.article<ContainerProps>`
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    width: 300px;
-    height: 300px;
+    width: 310px;
+    height: ${ props => props.heightExtern };
     background-color: ${themes.colors.main_sub_black};
     border-radius: 20px;
     border: 2px solid ${themes.colors.main_sub_gray};
+    margin: 15px 0px;
 `;
 export const AreaTitle = styled.div`
     display: flex;
@@ -21,11 +25,6 @@ export const AreaTitle = styled.div`
     width: 100%;
     height: 80px;
     padding: 5px 20px;
-`;
-export const IconHello = styled(CgHello)`
-    font-size: 50px;
-    margin-right: 10px;
-    color: ${themes.colors.main_dark_blue};
 `;
 export const Title = styled.h1`
     font-size: 25px;

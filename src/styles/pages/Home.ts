@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { FcAbout } from 'react-icons/fc';
+import { CgHello } from 'react-icons/cg';
 import { motion } from 'framer-motion';
 import themes from '../colors/themes';
 
@@ -28,4 +30,31 @@ export const ImgEng = styled.img`
     margin-bottom: 35px;
     width: 230px;
     border-radius: 50%;
+`;
+export const IconHello = styled(CgHello)`
+    font-size: 50px;
+    margin-right: 10px;
+    color: ${themes.colors.main_dark_blue};
+`;
+export const IconAbout = styled(FcAbout)`
+    font-size: 50px;
+    margin-right: 10px;
+    color: ${themes.colors.main_dark_blue};
+`;
+export const AreaCards = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+`;
+export const SecondBlock = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 80px);
+    padding: 15px 20px;  
 `;
