@@ -13,7 +13,7 @@ export const Container = styled.main`
     justify-content: center;
     flex-direction: column;
     margin-top: 80px;
-    margin-bottom: 10px;
+    border-bottom: 2px solid ${themes.colors.main_sub_gray};
     background-color: ${themes.colors.main_sub_black_2};
 `;
 export const FirstBlock = styled(motion.section)`

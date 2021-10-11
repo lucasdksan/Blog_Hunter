@@ -3,13 +3,12 @@ import Lottie from 'react-lottie';
 
 import { Container, 
         FirstBlock, 
-        ImgEng, 
-        IconHello,
-        IconAbout, 
+        ImgEng,
         SecondBlock,
         AreaCards } from '../styles/pages/Home';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import BlockText from '../components/BlockText';
 
 import { dataInfo } from '../data/DataInfo';
@@ -43,24 +42,22 @@ const Home = ()=>{
                         stiffness: 20,
                     }}
                 >
-                    <ImgEng src="https://avatars.githubusercontent.com/u/47578616?v=4"/>
+                    <ImgEng src="https://avatars.githubusercontent.com/u/47578616?v=4" alt="Minha imagem"/>
                     <AreaCards>
-                        <BlockText
-                            children={<IconHello/>}
-                            key={dataInfo[0].key}
-                            text={dataInfo[0].text}
-                            title={dataInfo[0].title}
-                            height={dataInfo[0].height}
-                        />
-                        <BlockText
-                            children={<IconAbout/>}
-                            key={dataInfo[1].key}
-                            text={dataInfo[1].text}
-                            title={dataInfo[1].title}
-                            height={dataInfo[1].height}
-                        />
+                        {
+                            dataInfo.map((item) => {
+                                return(
+                                    <BlockText
+                                        children={<item.icon/>}
+                                        key={item.key}
+                                        text={item.text}
+                                        title={item.title}
+                                        height={item.height}
+                                    />
+                                );
+                            })
+                        }    
                     </AreaCards>
-                );
                 </FirstBlock>
                 <SecondBlock>
                     <Lottie
@@ -76,6 +73,7 @@ const Home = ()=>{
                     />
                 </SecondBlock>
             </Container>
+            <Footer/>
         </>
     );
 }

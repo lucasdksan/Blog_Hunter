@@ -10,7 +10,7 @@ export const Container = styled.article<ContainerProps>`
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    width: 310px;
+    width: 320px;
     height: ${ props => props.heightExtern };
     background-color: ${themes.colors.main_sub_black};
     border-radius: 20px;

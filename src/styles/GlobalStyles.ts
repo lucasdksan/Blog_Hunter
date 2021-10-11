@@ -13,7 +13,7 @@ export default createGlobalStyle`
     }
     body::-webkit-scrollbar{
         width: 5px;
-        background-color: ${themes.colors.main_white};
+        background-color: ${themes.colors.main_sub_black_2};
     }
     body::-webkit-scrollbar-thumb{
         background: ${themes.colors.main_sub_gray};

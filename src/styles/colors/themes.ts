@@ -12,6 +12,7 @@ const themes = {
         main_sub_black: "#212121",
         main_sub_black_2: "#121214",
         main_sub_dark_blue: "#1b5662",
+        main_sub_dark_purple: "#070018",
         main_sub_baby_blue: "#b9effb",
     },
 };
