@@ -58,3 +58,9 @@ export const SecondBlock = styled.section`
     height: calc(100% - 80px);
     padding: 15px 20px;  
 `;
+export const TitleSecond = styled.h1`
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: ${themes.colors.main_white};
+    font-family: "Roboto";
+`;

@@ -5,13 +5,17 @@ import { Container,
         FirstBlock, 
         ImgEng,
         SecondBlock,
-        AreaCards } from '../styles/pages/Home';
+        AreaCards,
+        TitleSecond } from '../styles/pages/Home';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlockText from '../components/BlockText';
+import IconTech from '../components/IconTech';
+import AreaTech from '../components/AreaTech';
 
 import { dataInfo } from '../data/DataInfo';
+import { dataTech } from "../data/DataTech";
 import Animation from '../assets/animations/DeveloperAnimation.json';
 
 const Home = ()=>{
@@ -23,6 +27,7 @@ const Home = ()=>{
             preserveAspectRatio: 'xMidYMid slice'
         }
     }
+    const Item = dataTech[0].icon;
     return(
         <>
             <Header />
@@ -71,6 +76,22 @@ const Home = ()=>{
                             margin: '0px 0px 10px 10px',
                         }}
                     />
+                    <TitleSecond>TECNOLOGIAS</TitleSecond>
+                    <AreaTech>
+                        {
+                            dataTech.map((items, index) => {
+                                return(
+                                    <IconTech
+                                        key={index}
+                                        name={items.name}
+                                        children={
+                                            <items.icon/>
+                                        }
+                                    />
+                                );
+                            })
+                        }
+                    </AreaTech>
                 </SecondBlock>
             </Container>
             <Footer/>

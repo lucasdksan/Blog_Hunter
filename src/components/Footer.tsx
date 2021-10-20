@@ -41,10 +41,10 @@ const Footer = ()=>{
             </ClientArea>
             <AreaNetWork>
                 <ButtonLink href="mailto: lucas.leoncio.silva@gmail.com" target="_blank"><EmailIcon/></ButtonLink>
-                <ButtonLink href="https://www.instagram.com/lucas.ccac/" target="_blank"><InstaIcon/></ButtonLink>
+                <ButtonLink href="https://www.instagram.com/blog.hunter/" target="_blank"><InstaIcon/></ButtonLink>
                 <ButtonLink href="https://www.linkedin.com/in/lucas-silva-464b45164/" target="_blank"><LinkIcon/></ButtonLink>
-                <ButtonLink href="https://github.com/lucasdksan"><GitIcon/></ButtonLink>
-                <ButtonLink href="https://twitter.com/Lucasda24527132"><TwitterIcon/></ButtonLink>
+                <ButtonLink href="https://github.com/lucasdksan" target="_blank"><GitIcon/></ButtonLink>
+                <ButtonLink href="https://twitter.com/Lucasda24527132" target="_blank"><TwitterIcon/></ButtonLink>
             </AreaNetWork>
         </Container>
     );
