@@ -1,5 +1,4 @@
 import React from "react";
-import themes from "../styles/colors/themes";
 
 import { Container, Title } from "../styles/components/IconTech";
 

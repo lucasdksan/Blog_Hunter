@@ -27,7 +27,6 @@ const Home = ()=>{
             preserveAspectRatio: 'xMidYMid slice'
         }
     }
-    const Item = dataTech[0].icon;
     return(
         <>
             <Header />
