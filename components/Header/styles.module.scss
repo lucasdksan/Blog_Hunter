@@ -1,0 +1,44 @@
+@import "../../styles/themes/index";
+
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: $deskSize;
+    margin: $defaultZero auto;
+    position: fixed;
+    top: $defaultZero;
+    right: $defaultZero;
+    left: $defaultZero;
+    background-color: transparent;
+
+    nav {
+        ul {
+            display: inline-flex;
+
+            li {
+                margin: $defaultZero 29px;
+
+                &:first-child {
+                    margin-left: $defaultZero;
+                }
+
+                &:last-child {
+                    margin-right: $defaultZero;
+                }
+
+                a {
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-align: center;
+                    color: $color-1;
+                }
+            }
+        }
+    }
+}
