@@ -1,9 +1,18 @@
+import { CardHomeType } from "../../types/CardHomeType";
 import styles from "./styles.module.scss";
 
-const CardHome = ()=>{
+const CardHome = ({ link }:CardHomeType)=>{
     return(
         <div className={styles.container}>
-            <div className={styles.left}></div>
+            <div className={styles.left}>
+                <span>
+                    <img 
+                        src={link} 
+                        alt="Image User"
+                        className={styles.userImage}
+                    />
+                </span>
+            </div>
             <div className={styles.right}>
                 <h1>
                     Olá, me chamo <strong>Lucas da Silva</strong>
@@ -12,8 +21,8 @@ const CardHome = ()=>{
                     Sou desenvolvedor Full Stack, apaixonado por tecnologias de desenvolvimento.
                 </p>
                 <div className={styles.btnArea}>
-                    <a href="https://github.com/lucasdksan">Github</a>
-                    <a href="">Curriculo</a>
+                    <a className={styles.github} target="_blank" href="https://github.com/lucasdksan">Github</a>
+                    <a target="_blank" href="">Curriculo</a>
                 </div>
             </div>
         </div>

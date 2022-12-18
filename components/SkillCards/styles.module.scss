@@ -1,0 +1,35 @@
+@import "../../styles/themes/index";
+
+.container {
+    width: 160px;
+    height: 90px;
+
+    background: #24335C;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: $defaultZero 15px;
+
+    img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        border-radius: 50%;
+        border: 10px solid $color-2;
+        background-color: $color-2;
+        margin-top: -60px;
+        margin-bottom: 10px;
+    }
+
+    em {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 136%;
+        color: $color-1;
+    }
+}
