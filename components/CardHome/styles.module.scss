@@ -3,7 +3,7 @@
 .container {
     position: absolute;
     z-index: 10;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 40px 50px;
@@ -86,9 +86,6 @@
                 font-weight: 600;
                 font-size: 16px;
                 line-height: 150%;
-                /* identical to box height, or 24px */
-
-
                 color: $color-btn;
             }
         }

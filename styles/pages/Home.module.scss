@@ -15,6 +15,84 @@
       align-items: center;
       justify-content: center;
       padding: 60px $defaultZero;
+
+      .container {
+        background-image: url("/assets/Dots.png");
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+        h2 {
+          margin-bottom: 40px;
+        }
+
+        .containerNav {
+          width: 100%;
+          margin-bottom: 50px;
+
+          ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 10px 40px;
+              border: 3px solid $border-1;
+              border-radius: 67px;
+              margin: $defaultZero 20px;
+              &:hover {
+                cursor: pointer;
+                background-color: $color-5;
+                border: 3px solid $color-5;
+
+                span {
+                  color: $color-link;
+                }
+              }
+
+              &.active {
+                background-color: $color-5;
+                border: 3px solid $color-5;
+
+                span {
+                  color: $color-link;
+                }
+              }
+
+              span {
+                font-family: $font;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 136%;
+                color: $color-1;
+              }
+            }
+          }
+        }
+
+        .areaCards {
+          width: 100%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px 35px;
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    &.state {
+      background-image: url("/assets/bgRN.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     h2 {
@@ -54,8 +132,8 @@
 
     .containerCards {
       position: absolute;
-      left: 50%;
-      bottom: 5%;
+      left: 40%;
+      bottom: 2%;
       display: inline-flex;
     }
   }

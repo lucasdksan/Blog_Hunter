@@ -1,0 +1,46 @@
+@import "../../styles/themes/index";
+
+.container {
+    padding: 30px 35px;
+    border-radius: 25px;
+    background-color: $color-6;
+
+    strong {
+        font-family: $font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+        color: $color-1;
+    }
+
+    .contentBtn {
+        margin-top: 25px;
+
+        em {
+            background: $color-1;
+            border-radius: 12px;
+            padding: 8px 20px;
+
+            font-family: $font;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 148%;
+            text-align: center;
+            color: $color-6;
+        }
+
+        a {
+            padding: 8px 20px;
+            font-family: $font;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 148%;
+            text-align: center;
+            color: $color-link;
+            margin-left: 15px;
+        }
+    }
+}
