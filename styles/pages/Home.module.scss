@@ -90,9 +90,30 @@
     }
 
     &.state {
-      background-image: url("/assets/bgRN.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px $defaultZero;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        h2 {
+          margin-bottom: 50px;
+        }
+
+        .content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+          flex: 1;
+        }
+      }
     }
 
     h2 {
@@ -102,18 +123,6 @@
       font-size: 32px;
       line-height: 136%;
       color: $color-1;
-    }
-
-    .xicon {
-      position: absolute;
-      left: 35%;
-      top: 120px;
-    }
-
-    .cicon {
-      position: absolute;
-      left: 70%;
-      top: 500px;
     }
 
     .cardBlue {

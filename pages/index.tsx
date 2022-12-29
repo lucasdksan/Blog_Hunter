@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
-import Image from "next/image";
+import AboutCard from "../components/AboutCard";
+import AnimateElement from "../components/AnimateElement";
 import CardHome from "../components/CardHome";
 import CardRepo from "../components/CardRepo";
 import ElementFilterBtn from "../components/ElementFilterBtn";
@@ -24,20 +25,6 @@ const Home = (data: HomeTypes)=>{
       <main className={styles.main}>
         <section>
           <aside className={styles.cardBlue}></aside>
-          <Image 
-            src="/assets/+.png" 
-            alt="X icon" 
-            width={88}
-            height={88}
-            className={styles.xicon}
-          />
-          <Image 
-            src="/assets/Ellipse.png" 
-            alt="Circle Icon" 
-            width={88}
-            height={88}
-            className={styles.cicon}
-          />
           <div className={styles.container}>
             <CardHome 
               link={data.link}
@@ -138,7 +125,13 @@ const Home = (data: HomeTypes)=>{
           </div>
         </section>
         <section className={styles.state}>
-          
+          <div className={styles.container}>
+            <h2>Sobre</h2>
+            <div className={styles.content}>
+              <AboutCard />
+              <AnimateElement />
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
