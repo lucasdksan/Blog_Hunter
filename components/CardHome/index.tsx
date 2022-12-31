@@ -1,5 +1,7 @@
 import Image from "next/image";
+
 import { CardHomeType } from "../../types/CardHomeType";
+
 import styles from "./styles.module.scss";
 
 const CardHome = ({ link, urlGit }:CardHomeType)=>{
@@ -31,7 +33,7 @@ const CardHome = ({ link, urlGit }:CardHomeType)=>{
                     </p>
                     <div className={styles.btnArea}>
                         <a className={styles.github} target="_blank" href={urlGit}>Github</a>
-                        <a target="_blank" href="">Curriculo</a>
+                        <a target="_blank" href="/documents/Lucas_2.pdf" download>Curriculo</a>
                     </div>
                 </div>
             </div>

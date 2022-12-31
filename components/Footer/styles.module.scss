@@ -1,3 +1,135 @@
-footer {
+@import "../../styles/themes/index";
+
+.footerContainer {
+    background-color: $color-3;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px $defaultZero $defaultZero $defaultZero;
+
+    section {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        max-width: $TabletSize;
+        margin: $defaultZero auto;
+        width: 100%;
+
+        &.top {
+            justify-content: space-between;
+
+            .contentIcon {
+                height: 100%;
+                width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+
+                em {
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 25px;
+                    line-height: 30px;
+                    color: $color-1;
+                }
+            }
+
+            .navContent {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                height: 100%;
+
+                span {
+                    font-family: $font;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 25px;
+                    line-height: 30px;
+                    color: $color-1;
+                    margin-bottom: 10px;
+                }
+
+                ul {
+                    display: inline-flex;
+
+                    li {
+                        margin: $defaultZero 10px;
+
+                        &:first-child {
+                            margin-left: $defaultZero;
+                        }
+        
+                        &:last-child {
+                            margin-right: $defaultZero;
+                        }
+
+                        a {
+                            font-family: $font;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 19px;
+                            text-align: center;
+                            color: $color-1;
+        
+                            &:hover {
+                                color: $color-2;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .network {
+                a {
+                    &:first-child {
+                        margin-left: $defaultZero;
+                    }
     
+                    &:last-child {
+                        margin-right: $defaultZero;
+                    }
+
+                    margin: $defaultZero 10px;
+                }
+            }
+        }
+
+        &.midler {
+            margin-top: 25px;
+            justify-content: center;
+
+            q {
+                font-family: $font;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                color: $color-1;
+                margin-bottom: 10px;
+            }
+        }
+
+        &.bottom {
+            justify-content: center;
+            margin-top: 40px;
+            border-top: 1px solid $color-1;
+            padding: 10px $defaultZero;
+
+            p {
+                font-family: $font;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 30px;
+                color: $color-1;
+                margin-bottom: 10px;
+            }
+        }
+    }
 }

@@ -1,12 +1,11 @@
 import Image from "next/image";
+import { useCurrentDate } from "../../libs/useCurrentDate";
 
 import styles from "./styles.module.scss";
 
 const AboutCard = ()=>{
     function MyYear(){
-        const currentDate = new Date();
-        
-        return `${currentDate.getFullYear() - 1998}`;
+        return `${useCurrentDate() - 1998}`;
     }
 
     return (
@@ -54,7 +53,7 @@ const AboutCard = ()=>{
             <ul className={styles.listContainer}>
                 <li><em>Eu nasci no Ceará</em></li>
                 <li><em>Eu tenho {MyYear()} anos</em></li>
-                <li><em>Comecei a atuar no ramo de desenvolvimento a partir de 2020</em></li>
+                <li><em>Comecei a trabalhar no ramo de desenvolvimento em 2020</em></li>
                 <li><em>Sou desenvolvedor Front End, Back End e IoT</em></li>
                 <li><em>Atualmente moro no Rio Grande do Norte</em></li>
             </ul>

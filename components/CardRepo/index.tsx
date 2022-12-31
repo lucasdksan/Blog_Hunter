@@ -1,4 +1,5 @@
 import { CardRepoType } from "../../types/CardRepoType";
+
 import styles from "./styles.module.scss";
 
 const CardRepo = ({ link, name, type }: CardRepoType)=>{

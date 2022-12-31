@@ -1,4 +1,5 @@
 import Lottie from "react-lottie";
+
 import Animation from "../../assets/animate.json";
 
 import styles from "./styles.module.scss";

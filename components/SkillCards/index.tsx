@@ -1,4 +1,5 @@
 import { SkillProps } from "../../types/SkillType";
+
 import styles from "./styles.module.scss";
 
 const SkillCards = ({ name, src }: SkillProps)=>{

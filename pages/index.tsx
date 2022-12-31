@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+
 import AboutCard from "../components/AboutCard";
 import AnimateElement from "../components/AnimateElement";
 import CardHome from "../components/CardHome";
@@ -8,8 +9,11 @@ import Footer from "../components/Footer";
 import HeadComponent from "../components/HeadComponent";
 import Header from "../components/Header";
 import SkillCards from "../components/SkillCards";
+
 import { Skills } from "../data/Skills";
+
 import styles from "../styles/pages/Home.module.scss";
+
 import { HomeTypes } from "../types/HomeTypes";
 
 const Home = (data: HomeTypes)=>{
@@ -51,7 +55,8 @@ const Home = (data: HomeTypes)=>{
                 {
                   arryFilterElements.map((e,k)=>{
                     return(
-                      <ElementFilterBtn 
+                      <ElementFilterBtn
+                        key={k}
                         name={e}
                         onClick={handleFilterProject}
                       />

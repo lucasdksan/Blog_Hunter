@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+
 import { CardWelcomeType } from "../../types/CardWelcomeType";
 
 const CardWelcome = ({ location, fullName }:CardWelcomeType)=>{
