@@ -1,11 +1,13 @@
 import Image from "next/image";
-import { useCurrentDate } from "../../libs/useCurrentDate";
+import { useDate } from "../../libs/useDate";
 
 import styles from "./styles.module.scss";
 
 const AboutCard = ()=>{
+    const  { getAge } = useDate;
+    
     function MyYear(){
-        return `${useCurrentDate() - 1998}`;
+        return `${getAge("1998/11/07")}`;
     }
 
     return (

@@ -7,7 +7,7 @@ const CardRepo = ({ link, name, type }: CardRepoType)=>{
         <div className={styles.container}>
             <strong>{name}</strong>
             <div className={styles.contentBtn}>
-                <em>{type}</em>
+                <em>{type ? type : "Others"}</em>
                 <a target="_blank" href={link}>Visualizar</a>
             </div>
         </div>

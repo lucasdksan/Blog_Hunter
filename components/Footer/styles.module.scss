@@ -1,7 +1,7 @@
 @import "../../styles/themes/index";
 
 .footerContainer {
-    background-color: $color-3;
+    background-color: $color-2;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -34,6 +34,7 @@
                     font-size: 25px;
                     line-height: 30px;
                     color: $color-1;
+                    text-align: left;
                 }
             }
 
@@ -78,7 +79,7 @@
                             color: $color-1;
         
                             &:hover {
-                                color: $color-2;
+                                color: $button-1;
                             }
                         }
                     }
@@ -129,6 +130,7 @@
                 line-height: 30px;
                 color: $color-1;
                 margin-bottom: 10px;
+                text-align: center;
             }
         }
     }

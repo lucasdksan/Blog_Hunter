@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import { useEffect, useState } from "react";
 
 import AboutCard from "../components/AboutCard";
 import AnimateElement from "../components/AnimateElement";
@@ -15,14 +16,32 @@ import { Skills } from "../data/Skills";
 import styles from "../styles/pages/Home.module.scss";
 
 import { HomeTypes } from "../types/HomeTypes";
+import { RepoTypes } from "../types/RepoTypes";
 
-const Home = (data: HomeTypes)=>{
+const Home = (data: HomeTypes) => {
+  const [ reposArry, setRepposArry ] = useState<RepoTypes[]>(data.repos);
+  const [ reposArryRefined, setRepposArryRefined ] = useState<RepoTypes[]>([]);
+
   const arryFilterElements = ["todos", "typescript", "javascript", "css", "html", "scss"];
-  const handleFilterProject = (value: string)=>{
+  const handleFilterProject = (value: string) => {
 
   }
 
-  return(
+  const temporaryArr: RepoTypes[]= [];
+
+  reposArry.forEach(function(e, k){
+    if(k < 8){
+      temporaryArr.push(e);
+    }
+  });
+
+  useEffect(()=>{
+    if(temporaryArr){
+      setRepposArryRefined(temporaryArr);
+    }
+  },[]);
+
+  return (
     <>
       <HeadComponent />
       <Header />
@@ -30,15 +49,15 @@ const Home = (data: HomeTypes)=>{
         <section>
           <aside className={styles.cardBlue}></aside>
           <div className={styles.container}>
-            <CardHome 
+            <CardHome
               link={data.link}
               urlGit={data.githubLink}
             />
           </div>
           <div className={styles.containerCards}>
-            {Skills.map((e,k)=>{
-              return(
-                <SkillCards 
+            {Skills.map((e, k) => {
+              return (
+                <SkillCards
                   key={k}
                   name={e.name}
                   src={e.src}
@@ -53,8 +72,8 @@ const Home = (data: HomeTypes)=>{
             <div className={styles.containerNav}>
               <ul>
                 {
-                  arryFilterElements.map((e,k)=>{
-                    return(
+                  arryFilterElements.map((e, k) => {
+                    return (
                       <ElementFilterBtn
                         key={k}
                         name={e}
@@ -66,66 +85,18 @@ const Home = (data: HomeTypes)=>{
               </ul>
             </div>
             <div className={styles.areaCards}>
-              <CardRepo 
-                  link="https://github.com/lucasdksan/Ecoleta"
-                  name="Ecoleta"
-                  type="JavaScript"
-                />
-              <CardRepo 
-                link="https://github.com/lucasdksan/Proffy"
-                name="Proffy"
-                type="JavaScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/b7delivery"
-                name="B7Delivery"
-                type="JavaScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/Blog_Nextjs"
-                name="Blog_Next"
-                type="TypeScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/Backend-of-a-social-network"
-                name="Backend"
-                type="TypeScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/First-Project-with-Electron"
-                name="Electron"
-                type="TypeScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/Ecoleta"
-                name="Ecoleta"
-                type="JavaScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/Proffy"
-                name="Proffy"
-                type="JavaScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/b7delivery"
-                name="B7Delivery"
-                type="JavaScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/Blog_Nextjs"
-                name="Blog_Next"
-                type="TypeScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/Backend-of-a-social-network"
-                name="Backend"
-                type="TypeScript"
-              />
-              <CardRepo 
-                link="https://github.com/lucasdksan/First-Project-with-Electron"
-                name="Electron"
-                type="TypeScript"
-              />
+              {
+                reposArryRefined.map(function (e, k) {
+                  return (
+                    <CardRepo
+                      link={e.html_url}
+                      name={e.name}
+                      type={e.language}
+                      key={k}
+                    />
+                  );
+                })
+              }
             </div>
           </div>
         </section>
@@ -149,13 +120,18 @@ export default Home;
 export const getServerSideProps: GetServerSideProps = async () => {
   const result = await fetch("https://api.github.com/users/lucasdksan");
   const dataGit = await result.json();
+  const repos_Url = dataGit.repos_url;
+  const resultRepos = await fetch(repos_Url);
+  const arryRepos = await resultRepos.json();
 
   return {
     props: {
       link: dataGit.avatar_url,
       company: dataGit.company,
       githubLink: dataGit.html_url,
-      location: dataGit.location
+      location: dataGit.location,
+      reposQt: dataGit.public_repos,
+      repos: arryRepos
     }
   }
 }

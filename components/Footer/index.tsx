@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { useCurrentDate } from "../../libs/useCurrentDate";
+import { useDate } from "../../libs/useDate";
 
 import styles from "./styles.module.scss";
 
 const Footer = () => {
+    const { currentDate } = useDate;
     
-
     return (
         <footer className={styles.footerContainer}>
             <section className={styles.top}>
@@ -13,7 +13,7 @@ const Footer = () => {
                     <em>Lucas da Silva Leoncio</em>
                 </div>
                 <div className={styles.navContent}>
-                    <span>Navigation</span>
+                    <span>Navegação</span>
                     <ul>
                         <li><a href="">Home</a></li>
                         <li><a href="">Projetos</a></li>
@@ -64,7 +64,7 @@ const Footer = () => {
                 <q cite="https://www.pensador.com/autor/david_ribeiro_guilherme/">Não é a linguagem de programação que define o programador, mas sim sua lógica.</q>
             </section>
             <section className={styles.bottom}>
-                <p>&#169; Todos os direitos reservados {useCurrentDate()}.</p>
+                <p>&#169; Todos os direitos reservados {currentDate()}.</p>
             </section>
         </footer>
     );
