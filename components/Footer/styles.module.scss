@@ -79,6 +79,7 @@
                             color: $color-1;
         
                             &:hover {
+                                cursor: pointer;
                                 color: $button-1;
                             }
                         }

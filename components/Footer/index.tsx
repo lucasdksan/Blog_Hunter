@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useDate } from "../../libs/useDate";
+import useMyNavigation from "../../libs/useMyNavigation";
 
 import styles from "./styles.module.scss";
 
@@ -15,10 +16,10 @@ const Footer = () => {
                 <div className={styles.navContent}>
                     <span>Navegação</span>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Projetos</a></li>
-                        <li><a href="">Sobre</a></li>
-                        <li><a href="">Contato</a></li>
+                        <li><a onClick={()=>useMyNavigation("home")}>Home</a></li>
+                        <li><a onClick={()=>useMyNavigation("projects")}>Projetos</a></li>
+                        <li><a onClick={()=>useMyNavigation("about")}>Sobre</a></li>
+                        <li><a onClick={()=>useMyNavigation("hard-skills")}>Hard Skills</a></li>
                     </ul>
                 </div>
                 <div className={styles.network}>

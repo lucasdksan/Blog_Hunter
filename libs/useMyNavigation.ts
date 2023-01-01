@@ -1,7 +1,7 @@
 const useMyNavigation = (e: string)=>{
-    let href;
-
-    // document.querySelector(href).scrollIntoView();
+    const selectElement = document.getElementById(`${e}`);
+    
+    selectElement?.scrollIntoView({ behavior: "smooth" });
 }
 
 export default useMyNavigation;

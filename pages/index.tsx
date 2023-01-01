@@ -46,7 +46,7 @@ const Home = (data: HomeTypes) => {
       <HeadComponent />
       <Header />
       <main className={styles.main}>
-        <section>
+        <section id="home">
           <aside className={styles.cardBlue}></aside>
           <div className={styles.container}>
             <CardHome
@@ -66,7 +66,7 @@ const Home = (data: HomeTypes) => {
             })}
           </div>
         </section>
-        <section className={styles.projects}>
+        <section id="projects" className={styles.projects}>
           <div className={styles.container}>
             <h2>Projetos</h2>
             <div className={styles.containerNav}>
@@ -100,7 +100,7 @@ const Home = (data: HomeTypes) => {
             </div>
           </div>
         </section>
-        <section className={styles.state}>
+        <section id="about" className={styles.state}>
           <div className={styles.container}>
             <h2>Sobre</h2>
             <div className={styles.content}>
@@ -108,6 +108,9 @@ const Home = (data: HomeTypes) => {
               <AnimateElement />
             </div>
           </div>
+        </section>
+        <section id="hard-skills" className={styles.hardSkills}>
+
         </section>
       </main>
       <Footer />
