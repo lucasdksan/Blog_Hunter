@@ -12,11 +12,13 @@ import Header from "../components/Header";
 import SkillCards from "../components/SkillCards";
 
 import { Skills } from "../data/Skills";
+import { hardSkills } from "../data/HardSkills";
 
 import styles from "../styles/pages/Home.module.scss";
 
 import { HomeTypes } from "../types/HomeTypes";
 import { RepoTypes } from "../types/RepoTypes";
+import CardHardSkills from "../components/CardHardSkills/indext";
 
 const Home = (data: HomeTypes) => {
   const [ reposArry, setRepposArry ] = useState<RepoTypes[]>(data.repos);
@@ -110,7 +112,22 @@ const Home = (data: HomeTypes) => {
           </div>
         </section>
         <section id="hard-skills" className={styles.hardSkills}>
-
+        <div className={styles.container}>
+            <h2>Hard Skills</h2>
+            <div className={styles.content}>
+              {
+                hardSkills.map(function(e, k){
+                  return(
+                    <CardHardSkills 
+                      icon={e.icon}
+                      label={e.name}
+                      key={k}
+                    />
+                  );
+                })
+              }
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
