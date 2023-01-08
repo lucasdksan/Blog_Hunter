@@ -98,3 +98,9 @@ export type RepoTypes = {
     watchers: number;
     default_branch: string;
 };
+
+export type FiltedRepoTypes = {
+    link: string;
+    name: string;
+    type: string;
+}

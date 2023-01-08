@@ -1,4 +1,4 @@
-import { RepoTypes } from './RepoTypes';
+import { FiltedRepoTypes } from './RepoTypes';
 export type HomeTypes = {
     link: string;
     company: string;
@@ -6,5 +6,5 @@ export type HomeTypes = {
     githubLink: string;
     location: string;
     reposQt: number;
-    repos: RepoTypes[];
-}
+    repos: FiltedRepoTypes[];
+};

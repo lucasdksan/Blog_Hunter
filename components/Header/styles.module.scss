@@ -16,8 +16,24 @@
     z-index: 1000;
 
     nav {
+        background-color: $color-4;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-radius: 25px;
+        overflow: hidden;
+
+        &.active {            
+            padding-left: 25px;
+
+            ul {
+                display: inline-flex;
+            }
+        }
+
         ul {
-            display: inline-flex;
+            display: none;
 
             li {
                 margin: $defaultZero 29px;
@@ -41,9 +57,32 @@
 
                     &:hover {
                         cursor: pointer;
-                        color: $button-1;
+                        color: $color-hover;
                     }
                 }
+            }
+        }
+
+        .openBtn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: $color-4;
+            color: $color-1;
+            cursor: pointer;
+
+            &:hover {
+                svg {
+                    color: $color-hover;
+                }
+            }
+    
+            svg {
+                width: 25px;
+                height: 25px;
             }
         }
     }

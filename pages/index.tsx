@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import { useEffect, useState } from "react";
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 
 import AboutCard from "../components/AboutCard";
 import AnimateElement from "../components/AnimateElement";
@@ -17,31 +18,43 @@ import { hardSkills } from "../data/HardSkills";
 import styles from "../styles/pages/Home.module.scss";
 
 import { HomeTypes } from "../types/HomeTypes";
-import { RepoTypes } from "../types/RepoTypes";
+import { FiltedRepoTypes, RepoTypes } from "../types/RepoTypes";
 import CardHardSkills from "../components/CardHardSkills/indext";
+import { useFilterData } from "../libs/useFilterData";
 
 const Home = (data: HomeTypes) => {
-  const [ reposArry, setRepposArry ] = useState<RepoTypes[]>(data.repos);
-  const [ reposArryRefined, setRepposArryRefined ] = useState<RepoTypes[]>([]);
+  const [ reposArry, setReposArry ] = useState<FiltedRepoTypes[]>(data.repos);
+  const [ repoFilted, setRepoFilted ] = useState<FiltedRepoTypes[]>([]);
+  const [page, setPage] = useState(0);
+  const pageSize = 8;
+  const lenRepos = reposArry.length;
 
-  const arryFilterElements = ["todos", "typescript", "javascript", "css", "html", "scss"];
-  const handleFilterProject = (value: string) => {
+  let qtnPages = lenRepos/pageSize;
 
+  const handleNextClick = () => {
+    if(page < Math.trunc(qtnPages)){
+      setPage(page + 1);
+    } else {
+      setPage(page);
+    }
   }
 
-  const temporaryArr: RepoTypes[]= [];
-
-  reposArry.forEach(function(e, k){
-    if(k < 8){
-      temporaryArr.push(e);
+  const handlePrevClick = () => {
+    if(page > 0){
+      setPage(page - 1);
+    } else {
+      setPage(page);
     }
-  });
+  }
+
+  const handleFilterProject = async (value: string) => {
+    console.log(value);
+  }
 
   useEffect(()=>{
-    if(temporaryArr){
-      setRepposArryRefined(temporaryArr);
-    }
-  },[]);
+    setRepoFilted(reposArry.slice(page * pageSize, (page + 1) * pageSize));
+    console.log(repoFilted);
+  },[page]);
 
   return (
     <>
@@ -73,33 +86,33 @@ const Home = (data: HomeTypes) => {
             <h2>Projetos</h2>
             <div className={styles.containerNav}>
               <ul>
-                {
-                  arryFilterElements.map((e, k) => {
-                    return (
-                      <ElementFilterBtn
-                        key={k}
-                        name={e}
-                        onClick={handleFilterProject}
-                      />
-                    )
-                  })
-                }
+                <ElementFilterBtn 
+                  onClick={handleFilterProject}
+                />
               </ul>
             </div>
             <div className={styles.areaCards}>
               {
-                reposArryRefined.map(function (e, k) {
-                  return (
-                    <CardRepo
-                      link={e.html_url}
-                      name={e.name}
-                      type={e.language}
-                      key={k}
-                    />
-                  );
-                })
+                repoFilted.map((item, k )=> (
+                  <CardRepo
+                    link={item.link}
+                    name={item.name}
+                    type={item.type}
+                    key={k}
+                  />
+                ))
               }
             </div>
+            {
+              <div className={styles.areaControllCards}>
+                <span onClick={handlePrevClick}>
+                  <BsFillArrowLeftCircleFill />
+                </span>
+                <span onClick={handleNextClick}>
+                  <BsFillArrowRightCircleFill />
+                </span>
+              </div>
+            }
           </div>
         </section>
         <section id="about" className={styles.state}>
@@ -143,6 +156,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const repos_Url = dataGit.repos_url;
   const resultRepos = await fetch(repos_Url);
   const arryRepos = await resultRepos.json();
+  const tempArrReposFilted:FiltedRepoTypes[] = [];
+
+  arryRepos.forEach((element: RepoTypes) => {
+    tempArrReposFilted.push(
+      useFilterData(element)
+    );
+  });
 
   return {
     props: {
@@ -151,7 +171,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       githubLink: dataGit.html_url,
       location: dataGit.location,
       reposQt: dataGit.public_repos,
-      repos: arryRepos
+      repos: tempArrReposFilted
     }
   }
 }

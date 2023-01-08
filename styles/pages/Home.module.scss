@@ -15,6 +15,7 @@
       align-items: center;
       justify-content: center;
       padding: 60px $defaultZero;
+      height: auto !important;
 
       .container {
         background-image: url("/assets/Dots.png");
@@ -73,9 +74,31 @@
           width: 100%;
           display: inline-flex;
           align-items: center;
-          justify-content: center;
+          justify-content: flex-start;
           gap: 20px 35px;
           flex-wrap: wrap;
+        }
+
+        .areaControllCards {
+          margin-top: 20px;
+
+          span {
+            cursor: pointer;
+
+            &:last-child{
+              margin-left: 10px;
+            }
+
+            &:first-child {
+              margin-right: 10px;
+            }
+
+            svg {
+              width: 35px;
+              height: 35px;
+              color: $color-1;
+            }
+          }
         }
       }
     }

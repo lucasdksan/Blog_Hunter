@@ -1,13 +1,24 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+const fetchRepositories = async (url: string) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  const links = parseLinkHeader(response.headers.get('Link') as string);
 
-type Data = {
-  name: string
+  return { data, links };
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  return res.status(200).json({ name: 'John Doe' })
+function parseLinkHeader(linkHeader: string) {
+  if (!linkHeader) {
+    return {};
+  }
+
+  const links:any = {};
+  linkHeader.split(',').forEach((link) => {
+    const parts = link.split(';');
+    const url = parts[0].slice(1, -1);
+    const name = parts[1].slice(5, -1);
+    links[name] = url;
+  });
+  return links;
 }
+
+export { fetchRepositories }
