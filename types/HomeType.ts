@@ -1,4 +1,5 @@
-import { FiltedRepoTypes } from './RepoTypes';
+import { FiltedRepoTypes } from './RepoType';
+
 export type HomeTypes = {
     link: string;
     company: string;

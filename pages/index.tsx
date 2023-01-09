@@ -11,25 +11,43 @@ import Footer from "../components/Footer";
 import HeadComponent from "../components/HeadComponent";
 import Header from "../components/Header";
 import SkillCards from "../components/SkillCards";
+import CardHardSkills from "../components/CardHardSkills/indext";
 
 import { Skills } from "../data/Skills";
 import { hardSkills } from "../data/HardSkills";
+import { Experiences } from "../data/Experiences";
 
 import styles from "../styles/pages/Home.module.scss";
 
-import { HomeTypes } from "../types/HomeTypes";
-import { FiltedRepoTypes, RepoTypes } from "../types/RepoTypes";
-import CardHardSkills from "../components/CardHardSkills/indext";
+import { HomeTypes } from "../types/HomeType";
+import { FiltedRepoTypes, RepoTypes } from "../types/RepoType";
+
 import { useFilterData } from "../libs/useFilterData";
+import ExperiencesCard from "../components/ExperiencesCard";
 
 const Home = (data: HomeTypes) => {
   const [ reposArry, setReposArry ] = useState<FiltedRepoTypes[]>(data.repos);
   const [ repoFilted, setRepoFilted ] = useState<FiltedRepoTypes[]>([]);
-  const [page, setPage] = useState(0);
+  const [ nextLimit, setNextLimit ] = useState(true);
+  const [ prevLimit, setPrevLimit ] = useState(false);
+  const [ page, setPage ] = useState(0);
   const pageSize = 8;
   const lenRepos = reposArry.length;
 
   let qtnPages = lenRepos/pageSize;
+
+  const activeButton = ()=>{
+    if(page < Math.trunc(qtnPages) && page > 0) {
+      setNextLimit(true);
+      setPrevLimit(true);
+    } else if(page == 0) {
+      setNextLimit(true);
+      setPrevLimit(false);
+    } else if(page == Math.trunc(qtnPages)) {
+      setNextLimit(false);
+      setPrevLimit(true);
+    }
+  }
 
   const handleNextClick = () => {
     if(page < Math.trunc(qtnPages)){
@@ -43,6 +61,7 @@ const Home = (data: HomeTypes) => {
     if(page > 0){
       setPage(page - 1);
     } else {
+      setPrevLimit(false);
       setPage(page);
     }
   }
@@ -52,8 +71,8 @@ const Home = (data: HomeTypes) => {
   }
 
   useEffect(()=>{
+    activeButton();
     setRepoFilted(reposArry.slice(page * pageSize, (page + 1) * pageSize));
-    console.log(repoFilted);
   },[page]);
 
   return (
@@ -105,10 +124,16 @@ const Home = (data: HomeTypes) => {
             </div>
             {
               <div className={styles.areaControllCards}>
-                <span onClick={handlePrevClick}>
+                <span 
+                  onClick={handlePrevClick} 
+                  className={prevLimit ? styles.active : styles.not}
+                >
                   <BsFillArrowLeftCircleFill />
                 </span>
-                <span onClick={handleNextClick}>
+                <span 
+                  onClick={handleNextClick}
+                  className={nextLimit ? styles.active : styles.not}
+                >
                   <BsFillArrowRightCircleFill />
                 </span>
               </div>
@@ -122,6 +147,26 @@ const Home = (data: HomeTypes) => {
               <AboutCard />
               <AnimateElement />
             </div>
+          </div>
+        </section>
+        <section id="experiences" className={styles.experiences}>
+          <div className={styles.container}>
+            <h2>Experiências</h2>
+            <aside className={styles.content}>
+              {
+                Experiences.map((element, key)=>(
+                  <ExperiencesCard 
+                    name={element.name}
+                    technologies={element.technologies}
+                    temp={element.temp}
+                    year={element.year}
+                    type={element.type}
+                    description={element.description}
+                    key={key}
+                  />
+                ))
+              }
+            </aside>
           </div>
         </section>
         <section id="hard-skills" className={styles.hardSkills}>

@@ -75,7 +75,7 @@
           display: inline-flex;
           align-items: center;
           justify-content: flex-start;
-          gap: 20px 35px;
+          gap: 15px 30px;
           flex-wrap: wrap;
         }
 
@@ -84,6 +84,14 @@
 
           span {
             cursor: pointer;
+
+            &.not {
+              opacity: 0.8;
+            }
+
+            &.active {
+              opacity: 1;
+            }
 
             &:last-child{
               margin-left: 10px;
@@ -127,6 +135,33 @@
           justify-content: space-between;
           position: relative;
           flex: 1;
+        }
+      }
+    }
+
+    &.experiences {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px $defaultZero;
+      height: auto !important;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        .content {
+          margin-top: 15px;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px 10px;
         }
       }
     }

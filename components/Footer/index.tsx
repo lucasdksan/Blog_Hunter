@@ -19,6 +19,7 @@ const Footer = () => {
                         <li><a onClick={()=>useMyNavigation("home")}>Home</a></li>
                         <li><a onClick={()=>useMyNavigation("projects")}>Projetos</a></li>
                         <li><a onClick={()=>useMyNavigation("about")}>Sobre</a></li>
+                        <li><a onClick={()=>useMyNavigation("experiences")}>Experiências</a></li>
                         <li><a onClick={()=>useMyNavigation("hard-skills")}>Hard Skills</a></li>
                     </ul>
                 </div>

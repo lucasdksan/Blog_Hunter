@@ -1,4 +1,4 @@
-import { RepoTypes } from './../types/RepoTypes';
+import { RepoTypes } from '../types/RepoType';
 
 export const useFilterData = (data: RepoTypes)=> {
     return {
