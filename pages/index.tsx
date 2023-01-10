@@ -24,17 +24,43 @@ import { FiltedRepoTypes, RepoTypes } from "../types/RepoType";
 
 import { useFilterData } from "../libs/useFilterData";
 import ExperiencesCard from "../components/ExperiencesCard";
+import { gitHubAPI } from "./api/github";
 
 const Home = (data: HomeTypes) => {
   const [ reposArry, setReposArry ] = useState<FiltedRepoTypes[]>(data.repos);
   const [ repoFilted, setRepoFilted ] = useState<FiltedRepoTypes[]>([]);
   const [ nextLimit, setNextLimit ] = useState(true);
   const [ prevLimit, setPrevLimit ] = useState(false);
+  const [ allSetFilter, setAllSetFilter ] = useState(true);
   const [ page, setPage ] = useState(0);
+  const arrTypes = ["HTML", "TypeScript", "JavaScript", "CSS", "SCSS", "TODOS"];
   const pageSize = 8;
   const lenRepos = reposArry.length;
 
   let qtnPages = lenRepos/pageSize;
+
+  const keyConvertForSearch = (value: string)=>{
+    switch(value){
+      case "all":
+        return "todos";
+      break;
+      case "ts":
+        return "TypeScript";
+      break;
+      case "js":
+        return "JavaScript";
+      break;
+      case "css":
+        return "CSS";
+      break;
+      case "html":
+        return "SCSS";
+      break;
+      default:
+        return "";
+      break;
+    }
+  }
 
   const activeButton = ()=>{
     if(page < Math.trunc(qtnPages) && page > 0) {
@@ -67,13 +93,28 @@ const Home = (data: HomeTypes) => {
   }
 
   const handleFilterProject = async (value: string) => {
-    console.log(value);
+    let keyFilted = keyConvertForSearch(value);
+    let reposFiltedSelect:FiltedRepoTypes[] = [];
+
+    if(value === "all"){
+      setAllSetFilter(true);
+    } else {
+      reposFiltedSelect = await gitHubAPI(keyFilted);
+      setRepoFilted(reposFiltedSelect);
+      setAllSetFilter(false);
+    }
+
   }
 
   useEffect(()=>{
     activeButton();
-    setRepoFilted(reposArry.slice(page * pageSize, (page + 1) * pageSize));
-  },[page]);
+    
+    if(allSetFilter){
+      setRepoFilted(reposArry.slice(page * pageSize, (page + 1) * pageSize));
+    } else {
+      setRepoFilted(repoFilted.slice(page * pageSize, (page + 1) * pageSize));
+    }
+  },[page, allSetFilter]);
 
   return (
     <>
