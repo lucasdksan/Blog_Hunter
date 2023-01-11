@@ -29,11 +29,11 @@ import { gitHubAPI } from "./api/github";
 const Home = (data: HomeTypes) => {
   const [ reposArry, setReposArry ] = useState<FiltedRepoTypes[]>(data.repos);
   const [ repoFilted, setRepoFilted ] = useState<FiltedRepoTypes[]>([]);
+  const [ repoFiltedAPI, setRepoFiltedAPI ] = useState<FiltedRepoTypes[]>([]);
   const [ nextLimit, setNextLimit ] = useState(true);
   const [ prevLimit, setPrevLimit ] = useState(false);
   const [ allSetFilter, setAllSetFilter ] = useState(true);
   const [ page, setPage ] = useState(0);
-  const arrTypes = ["HTML", "TypeScript", "JavaScript", "CSS", "SCSS", "TODOS"];
   const pageSize = 8;
   const lenRepos = reposArry.length;
 
@@ -54,6 +54,9 @@ const Home = (data: HomeTypes) => {
         return "CSS";
       break;
       case "html":
+        return "HTML";
+      break;
+      case "scss":
         return "SCSS";
       break;
       default:
@@ -100,7 +103,7 @@ const Home = (data: HomeTypes) => {
       setAllSetFilter(true);
     } else {
       reposFiltedSelect = await gitHubAPI(keyFilted);
-      setRepoFilted(reposFiltedSelect);
+      setRepoFiltedAPI(reposFiltedSelect);
       setAllSetFilter(false);
     }
 
@@ -112,9 +115,9 @@ const Home = (data: HomeTypes) => {
     if(allSetFilter){
       setRepoFilted(reposArry.slice(page * pageSize, (page + 1) * pageSize));
     } else {
-      setRepoFilted(repoFilted.slice(page * pageSize, (page + 1) * pageSize));
+      setRepoFilted(repoFiltedAPI.slice(page * pageSize, (page + 1) * pageSize));
     }
-  },[page, allSetFilter]);
+  },[page, allSetFilter, repoFiltedAPI]);
 
   return (
     <>
