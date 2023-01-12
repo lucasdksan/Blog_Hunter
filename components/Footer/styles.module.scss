@@ -28,11 +28,9 @@
                 flex-direction: column;
 
                 em {
+                    @include footerText;
                     font-family: $font;
-                    font-style: normal;
-                    font-weight: 700;
                     font-size: 25px;
-                    line-height: 30px;
                     color: $color-1;
                     text-align: left;
                 }
@@ -46,11 +44,9 @@
                 height: 100%;
 
                 span {
+                    @include footerText;
                     font-family: $font;
-                    font-style: normal;
-                    font-weight: 700;
                     font-size: 25px;
-                    line-height: 30px;
                     color: $color-1;
                     margin-bottom: 10px;
                 }
@@ -70,12 +66,9 @@
                         }
 
                         a {
+                            @include textNavigation;
                             font-family: $font;
-                            font-style: normal;
-                            font-weight: 400;
                             font-size: 20px;
-                            line-height: 19px;
-                            text-align: center;
                             color: $color-1;
         
                             &:hover {
@@ -107,11 +100,9 @@
             justify-content: center;
 
             q {
+                @include footerText;
                 font-family: $font;
-                font-style: normal;
-                font-weight: 700;
                 font-size: 20px;
-                line-height: 30px;
                 color: $color-1;
                 margin-bottom: 10px;
             }
@@ -124,11 +115,9 @@
             padding: 10px $defaultZero;
 
             p {
+                @include footerText;
                 font-family: $font;
-                font-style: normal;
-                font-weight: 700;
                 font-size: 18px;
-                line-height: 30px;
                 color: $color-1;
                 margin-bottom: 10px;
                 text-align: center;

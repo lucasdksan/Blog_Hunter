@@ -25,12 +25,8 @@
             justify-content: center;
             margin-bottom: 10px;
             
-
+            @include textCard;
             font-family: $font;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 136%;
             color: $color-1;
 
             .line {
@@ -48,22 +44,16 @@
         margin-right: 10px;
 
         .title {
+            @include lineText;
             font-family: $font;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 136%;
             color: $color-1;
         }
 
         .description{
             margin-top: 15px;
 
+            @include textCard;
             font-family: $font;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 136%;
             color: $color-1;
         }
     }
@@ -73,10 +63,7 @@
 
         span {
             font-family: $font;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 136%;
+            @include lineText;
             color: $color-1;
         }
 

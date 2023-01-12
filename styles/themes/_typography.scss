@@ -1,0 +1,33 @@
+@mixin titleH2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 136%;
+}
+
+@mixin lineText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 136%;
+}
+
+@mixin textCard {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 136%;
+}
+
+@mixin textNavigation {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+}
+
+@mixin footerText {
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}

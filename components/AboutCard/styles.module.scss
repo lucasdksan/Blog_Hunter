@@ -50,11 +50,8 @@
             }
 
             em {
+                @include lineText;
                 font-family: $font;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 20px;
-                line-height: 136%;
                 color: $color-1;
             }
         }
