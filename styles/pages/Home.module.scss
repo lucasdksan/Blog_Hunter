@@ -175,14 +175,25 @@
       }
 
       .content {
-        display: inline-flex;
-        gap: 15px;
-        width: 100%;
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 10px 0px;
 
         max-width: $TabletSizeM;
+
+        .line {
+          display: inline-flex;
+
+          .cardsArea {
+
+          }
+          
+          .lottieArea {
+            
+          }
+        }
       }
     }
 

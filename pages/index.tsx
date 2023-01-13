@@ -12,10 +12,12 @@ import HeadComponent from "../components/HeadComponent";
 import Header from "../components/Header";
 import SkillCards from "../components/SkillCards";
 import CardHardSkills from "../components/CardHardSkills/indext";
+import ExperiencesCard from "../components/ExperiencesCard";
 
 import { Skills } from "../data/Skills";
 import { hardSkills } from "../data/HardSkills";
 import { Experiences } from "../data/Experiences";
+import { AnimateElementHard, AnimateElementHard1, AnimateElementHard2 } from "../data/AnimateLottie";
 
 import styles from "../styles/pages/Home.module.scss";
 
@@ -23,7 +25,7 @@ import { HomeTypes } from "../types/HomeType";
 import { FiltedRepoTypes, RepoTypes } from "../types/RepoType";
 
 import { useFilterData } from "../libs/useFilterData";
-import ExperiencesCard from "../components/ExperiencesCard";
+
 import { gitHubAPI } from "./api/github";
 
 const Home = (data: HomeTypes) => {
@@ -217,17 +219,60 @@ const Home = (data: HomeTypes) => {
         <div className={styles.container}>
             <h2>Hard Skills</h2>
             <div className={styles.content}>
-              {
-                hardSkills.map(function(e, k){
-                  return(
-                    <CardHardSkills 
-                      icon={e.icon}
-                      label={e.name}
-                      key={k}
-                    />
-                  );
-                })
-              }
+              <div className={styles.line}>
+                <div className={styles.cardsArea}>
+                  {
+                    hardSkills.map(function(e,k){
+                      if(k < 5) return(
+                        <CardHardSkills 
+                          icon={e.icon}
+                          label={e.name}
+                          key={k}
+                        />
+                      );
+                    })
+                  }
+                </div>
+                <div className={styles.lottieArea}>
+                  <AnimateElementHard />
+                </div>
+              </div>
+              <div className={styles.line}>
+                <div className={styles.lottieArea}>
+                <AnimateElementHard1 />
+                </div>
+                <div className={styles.cardsArea}>
+                  {
+                    hardSkills.map(function(e,k){
+                      if(k < 10 && k >=5) return(
+                        <CardHardSkills 
+                          icon={e.icon}
+                          label={e.name}
+                          key={k}
+                        />
+                      );
+                    })
+                  }
+                </div>
+              </div>
+              <div className={styles.line}>
+                <div className={styles.cardsArea}>
+                  {
+                    hardSkills.map(function(e,k){
+                      if(k >= 10) return(
+                        <CardHardSkills 
+                          icon={e.icon}
+                          label={e.name}
+                          key={k}
+                        />
+                      );
+                    })
+                  }
+                </div>
+                <div className={styles.lottieArea}>
+                  <AnimateElementHard2 />
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -41,7 +41,7 @@ export const Experiences = [
         type: "Docência",
         technologies: [
             "SCILAB", 
-            "PAYTHON"
+            "PYTHON"
         ]
     },
     {
