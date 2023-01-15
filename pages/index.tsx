@@ -29,17 +29,17 @@ import { useFilterData } from "../libs/useFilterData";
 import { gitHubAPI } from "./api/github";
 
 const Home = (data: HomeTypes) => {
+  const pageSize = 8;
+
   const [ reposArry, setReposArry ] = useState<FiltedRepoTypes[]>(data.repos);
   const [ repoFilted, setRepoFilted ] = useState<FiltedRepoTypes[]>([]);
   const [ repoFiltedAPI, setRepoFiltedAPI ] = useState<FiltedRepoTypes[]>([]);
   const [ nextLimit, setNextLimit ] = useState(true);
   const [ prevLimit, setPrevLimit ] = useState(false);
   const [ allSetFilter, setAllSetFilter ] = useState(true);
+  const [ lenRepos, setLenRepos ] = useState(reposArry.length);
+  const [ qtnPages, setQtnPages ] = useState(lenRepos/pageSize);
   const [ page, setPage ] = useState(0);
-  const pageSize = 8;
-  const lenRepos = reposArry.length;
-
-  let qtnPages = lenRepos/pageSize;
 
   const keyConvertForSearch = (value: string)=>{
     switch(value){
@@ -83,8 +83,11 @@ const Home = (data: HomeTypes) => {
   const handleNextClick = () => {
     if(page < Math.trunc(qtnPages)){
       setPage(page + 1);
+    } else if(Math.trunc(qtnPages) == 0) {
+      setPage(page + 1);
     } else {
       setPage(page);
+      setNextLimit(true);
     }
   }
 
@@ -109,9 +112,12 @@ const Home = (data: HomeTypes) => {
       setAllSetFilter(false);
     }
 
+    setPage(0);
   }
 
   useEffect(()=>{
+    setLenRepos(allSetFilter ? reposArry.length : repoFiltedAPI.length);
+    setQtnPages(lenRepos/pageSize);
     activeButton();
     
     if(allSetFilter){
@@ -216,7 +222,7 @@ const Home = (data: HomeTypes) => {
           </div>
         </section>
         <section id="hard-skills" className={styles.hardSkills}>
-        <div className={styles.container}>
+          <div className={styles.container}>
             <h2>Hard Skills</h2>
             <div className={styles.content}>
               <div className={styles.line}>
@@ -239,7 +245,7 @@ const Home = (data: HomeTypes) => {
               </div>
               <div className={styles.line}>
                 <div className={styles.lottieArea}>
-                <AnimateElementHard1 />
+                  <AnimateElementHard1 />
                 </div>
                 <div className={styles.cardsArea}>
                   {

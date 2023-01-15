@@ -22,16 +22,40 @@ const hardSkills = [
         icon: <FaNodeJs />
     },
     {
-        name: "JQuery",
-        icon: <DiJqueryLogo />
+        name: "Next Js",
+        icon: <SiNextdotjs />
     },
     {
-        name: "Gulp",
-        icon: <DiGulp />
+        name: "TypeScript",
+        icon: <SiTypescript />
     },
     {
         name: "Git",
         icon: <AiFillGithub />
+    },
+    {
+        name: "JavaScript",
+        icon: <SiJavascript />
+    },
+    {
+        name: "JQuery",
+        icon: <DiJqueryLogo />
+    },
+    {
+        name: "Html",
+        icon: <SiHtml5 />
+    },
+    {
+        name: "Scss",
+        icon: <SiSass />
+    },
+    {
+        name: "Css",
+        icon: <SiCss3 />
+    },
+    {
+        name: "Gulp",
+        icon: <DiGulp />
     },
     {
         name: "Bootstrap",
@@ -42,36 +66,12 @@ const hardSkills = [
         icon: <SiElectron />
     },
     {
-        name: "Html",
-        icon: <SiHtml5 />
-    },
-    {
-        name: "Css",
-        icon: <SiCss3 />
-    },
-    {
-        name: "JavaScript",
-        icon: <SiJavascript />
-    },
-    {
         name: "Arduino",
         icon: <SiArduino />
     },
     {
         name: "C++",
         icon: <SiCplusplus />
-    },
-    {
-        name: "Next Js",
-        icon: <SiNextdotjs />
-    },
-    {
-        name: "TypeScript",
-        icon: <SiTypescript />
-    },
-    {
-        name: "Scss",
-        icon: <SiSass />
     }
 ]
 
