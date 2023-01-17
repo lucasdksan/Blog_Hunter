@@ -147,6 +147,21 @@ const Home = (data: HomeTypes) => {
                   key={k}
                   name={e.name}
                   src={e.src}
+                  tablet={false}
+                />
+              );
+            })}
+          </div>
+        </section>
+        <section className={styles.contentResumeHardSkills}>
+          <div className={styles.container}>
+            {Skills.map((e, k) => {
+              return (
+                <SkillCards
+                  key={k}
+                  name={e.name}
+                  src={e.src}
+                  tablet={true}
                 />
               );
             })}

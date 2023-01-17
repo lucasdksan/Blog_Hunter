@@ -83,4 +83,28 @@
             }
         }
     }
+
+    @media(max-width: $deskSize){
+        max-width: $deskSizeM;
+    }
+
+    @media(max-width: $deskSizeM){
+        max-width: $TabletSize;
+    }
+
+    @media(max-width: $TabletSize){
+        max-width: $TabletSizeM;
+    }
+
+    @media(max-width: $TabletSizeM){
+        max-width: $TabletSizeT;
+    }
+
+    @media(max-width: $TabletSizeT){
+        max-width: $MobileSize;
+    }
+
+    @media(max-width: $MobileSize) {
+        max-width: $MobileSizeM;
+    }
 }

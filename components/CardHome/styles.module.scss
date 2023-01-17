@@ -9,6 +9,23 @@
     width: 100%;
     max-width: $TabletSize;
 
+    @media(max-width: $TabletSize){
+        max-width: $TabletSizeM;
+    }
+
+    @media(max-width: $TabletSizeM){
+        max-width: $TabletSizeT;
+        top: 50%;
+    }
+
+    @media(max-width: $TabletSizeT) {
+        max-width: $MobileSize;
+    }
+
+    @media(max-width: $MobileSize) {
+        max-width: $MobileSizeM;
+    }
+
     .content {
         width: 100%;
         padding: 40px 50px;
@@ -20,8 +37,22 @@
         backdrop-filter: blur(10px);
         border-radius: 200px 0px;
 
+        @media(max-width: $TabletSize){
+            padding: 50px 60px;
+            flex-direction: column;
+        }
+
+        @media(max-width: $MobileSize) {
+            padding: 55px 40px;
+            border-radius: 85px 0px;
+        }
+
         .left {
             margin-right: 75px;
+
+            @media(max-width: $TabletSize) {
+                margin-right: 0px;
+            }
 
             span {
                 display: block;
@@ -30,6 +61,22 @@
                 height: 400px;
                 overflow: hidden;
                 border-radius: 50%;
+
+                @media(max-width: $TabletSize) {
+                    width: 350px;
+                    height: 350px;
+                }
+
+                @media(max-width: $TabletSizeT) {
+                    width: 300px;
+                    height: 300px;
+                }
+
+                @media(max-width: $MobileSize) {
+                    width: 235px;
+                    height: 235px;
+                    border: 15px solid $color-1;
+                }
 
                 .userImage {
                     width: 100%;
@@ -48,6 +95,14 @@
                 line-height: 136%;
                 color: $color-1;
                 margin-bottom: 20px;
+
+                @media(max-width: $TabletSizeT) {
+                    font-size: 50px;
+                }
+
+                @media(max-width: $MobileSize) {
+                    font-size: 40px;
+                }
 
                 strong {
                     color: $button-1;
@@ -100,6 +155,14 @@
         left: 30%;
         top: -40px;
         z-index: -10;
+        
+        @media(max-width: $TabletSize){
+            left: 50%;
+        }
+
+        @media(max-width: $TabletSizeM){
+            left: 65%;
+        }
     }
 
     .cicon {
@@ -107,5 +170,15 @@
         left: 90%;
         top: 380px;
         z-index: -10;
+
+        @media(max-width: $TabletSize){
+            left: 92%;
+            top: 500px;
+        }
+
+        @media(max-width: $TabletSizeM){
+            left: 88%;
+            top: 500px;
+        }
     }
 }
