@@ -11,6 +11,16 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    @media(max-width: $TabletSizeM){
+        width: 215px;
+        height: 300px;
+    }
+
+    @media(max-width: $MobileSize){
+        width: 160px;
+        height: 320px;
+    }
+
     strong {
         font-family: $font;
         font-style: normal;
@@ -20,10 +30,20 @@
         word-break: break-word;
         text-align: left;
         color: $color-1;
+
+        @media(max-width: $TabletSizeM) {
+            font-size: 25px;
+        }
     }
 
     .contentBtn {
         margin-top: 25px;
+
+        @media(max-width: $TabletSizeM) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
         em {
             background: $color-1;
@@ -37,6 +57,10 @@
             line-height: 148%;
             text-align: center;
             color: $color-6;
+
+            @media(max-width: $TabletSizeM) {
+                margin-bottom: 10px;
+            }
         }
 
         a {
@@ -49,6 +73,10 @@
             text-align: center;
             color: $color-link;
             margin-left: 15px;
+
+            @media(max-width: $TabletSizeM) {
+                margin-left: $defaultZero;
+            }
         }
     }
 }
