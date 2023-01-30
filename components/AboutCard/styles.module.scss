@@ -17,6 +17,28 @@
     border-radius: 100px 0px;
     box-shadow: 20px 20px 10px $color-1;
 
+    @media(max-width: $deskSizeM){
+        right: -20px;
+    }
+
+    @media(max-width: $TabletSize){
+        width: 400px;
+        box-shadow: 10px 10px 10px $color-1;
+        right: -10px;
+    }
+
+    @media(max-width: $TabletSizeM){
+        position: relative;
+        right: auto;
+        bottom: auto;
+    }
+
+    @media(max-width: $MobileSize){
+        width: 320px;
+        height: 400px;
+        box-shadow: 5px 5px 10px $color-1;
+    }
+
     .topHeader {
         width: 100%;
         display: flex;

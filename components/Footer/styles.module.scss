@@ -16,8 +16,28 @@
         margin: $defaultZero auto;
         width: 100%;
 
+        @media(max-width: $TabletSize){
+            max-width: $TabletSizeM;
+        }
+
+        @media(max-width: $TabletSizeM){
+            max-width: $TabletSizeT;
+        }
+
+        @media(max-width: $TabletSizeT){
+            max-width: $MobileSize;
+        }
+
+        @media(max-width: $MobileSize){
+            max-width: $MobileSizeM;
+        }
+
         &.top {
             justify-content: space-between;
+
+            @media(max-width: $TabletSizeM) {
+                justify-content: center;
+            }
 
             .contentIcon {
                 height: 100%;
@@ -26,6 +46,11 @@
                 align-items: center;
                 justify-content: flex-start;
                 flex-direction: column;
+
+                @media(max-width: $TabletSizeM) {
+                    display: none;
+                    visibility: hidden;
+                }
 
                 em {
                     @include footerText;
@@ -57,6 +82,10 @@
                     li {
                         margin: $defaultZero 10px;
 
+                        @media(max-width: $MobileSize){
+                            margin: $defaultZero 5px;
+                        }
+
                         &:first-child {
                             margin-left: $defaultZero;
                         }
@@ -81,6 +110,15 @@
             }
 
             .network {
+                @media(max-width: $TabletSize) {
+                    display: flex;
+                }
+
+                @media(max-width: $TabletSizeM) {
+                    display: none;
+                    visibility: hidden;
+                }
+
                 a {
                     &:first-child {
                         margin-left: $defaultZero;
@@ -91,6 +129,15 @@
                     }
 
                     margin: $defaultZero 10px;
+
+                    @media(max-width: $TabletSize) {
+                        margin: $defaultZero 5px;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
                 }
             }
         }
@@ -98,6 +145,7 @@
         &.midler {
             margin-top: 25px;
             justify-content: center;
+            text-align: center;
 
             q {
                 @include footerText;

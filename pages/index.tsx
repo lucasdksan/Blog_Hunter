@@ -258,7 +258,7 @@ const Home = (data: HomeTypes) => {
                   <AnimateElementHard />
                 </div>
               </div>
-              <div className={styles.line}>
+              <div className={styles.line} data-invert="invert">
                 <div className={styles.lottieArea}>
                   <AnimateElementHard1 />
                 </div>

@@ -3,13 +3,18 @@
 .container {
     padding: 35px 25px;
     width: 40%;
-    height: 300px;
+    height: 350px;
     border-radius: 25px;
     background-color: $color-6;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media(max-width: 1180px){
+        width: 80%;
+        height: auto;
+    }
 
     .containerDate {
         display: flex;
@@ -29,6 +34,10 @@
             font-family: $font;
             color: $color-1;
 
+            @media(max-width: $MobileSize){
+                font-size: 14px;
+            }
+
             .line {
                 width: 1px;
                 height: 30px;
@@ -47,6 +56,10 @@
             @include lineText;
             font-family: $font;
             color: $color-1;
+
+            @media(max-width: $MobileSize){
+                font-size: 18px;
+            }
         }
 
         .description{
@@ -55,6 +68,10 @@
             @include textCard;
             font-family: $font;
             color: $color-1;
+
+            @media(max-width: $MobileSize){
+                font-size: 14px;
+            }
         }
     }
 
@@ -65,6 +82,10 @@
             font-family: $font;
             @include lineText;
             color: $color-1;
+
+            @media(max-width: $MobileSize){
+                font-size: 18px;
+            }
         }
 
         div {
@@ -85,6 +106,10 @@
                 font-size: 14px;
                 padding: 8px 10px;
                 border-radius: 10px;
+                
+                @media(max-width: $MobileSize){
+                    padding: 6px 8px;
+                }
             }
         }
     }

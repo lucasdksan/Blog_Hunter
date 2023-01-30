@@ -10,10 +10,8 @@ export const Experiences = [
         description: "Desenvolver e fazer manutenções de e-commerces utilizando a plataforma VTEX.",
         type: "CLT",
         technologies: [
-            "HTML5", 
-            "SASS",
+            "HTML5",
             "SCSS",
-            "GTM",
             "JQuery",
             "VTEX IO",
             "JAVASCRIPT",
