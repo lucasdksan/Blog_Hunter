@@ -1,0 +1,175 @@
+@import "../../styles/themes/index";
+
+.footerContainer {
+    background-color: $color-2;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px $defaultZero $defaultZero $defaultZero;
+
+    section {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        max-width: $TabletSize;
+        margin: $defaultZero auto;
+        width: 100%;
+
+        @media(max-width: $TabletSize){
+            max-width: $TabletSizeM;
+        }
+
+        @media(max-width: $TabletSizeM){
+            max-width: $TabletSizeT;
+        }
+
+        @media(max-width: $TabletSizeT){
+            max-width: $MobileSize;
+        }
+
+        @media(max-width: $MobileSize){
+            max-width: $MobileSizeM;
+        }
+
+        &.top {
+            justify-content: space-between;
+
+            @media(max-width: $TabletSizeM) {
+                justify-content: center;
+            }
+
+            .contentIcon {
+                height: 100%;
+                width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+
+                @media(max-width: $TabletSizeM) {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                em {
+                    @include footerText;
+                    font-family: $font;
+                    font-size: 25px;
+                    color: $color-1;
+                    text-align: left;
+                }
+            }
+
+            .navContent {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                height: 100%;
+
+                span {
+                    @include footerText;
+                    font-family: $font;
+                    font-size: 25px;
+                    color: $color-1;
+                    margin-bottom: 10px;
+                }
+
+                ul {
+                    display: inline-flex;
+
+                    li {
+                        margin: $defaultZero 10px;
+
+                        @media(max-width: $MobileSize){
+                            margin: $defaultZero 5px;
+                        }
+
+                        &:first-child {
+                            margin-left: $defaultZero;
+                        }
+        
+                        &:last-child {
+                            margin-right: $defaultZero;
+                        }
+
+                        a {
+                            @include textNavigation;
+                            font-family: $font;
+                            font-size: 20px;
+                            color: $color-1;
+        
+                            &:hover {
+                                cursor: pointer;
+                                color: $button-1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .network {
+                @media(max-width: $TabletSize) {
+                    display: flex;
+                }
+
+                @media(max-width: $TabletSizeM) {
+                    display: none;
+                    visibility: hidden;
+                }
+
+                a {
+                    &:first-child {
+                        margin-left: $defaultZero;
+                    }
+    
+                    &:last-child {
+                        margin-right: $defaultZero;
+                    }
+
+                    margin: $defaultZero 10px;
+
+                    @media(max-width: $TabletSize) {
+                        margin: $defaultZero 5px;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.midler {
+            margin-top: 25px;
+            justify-content: center;
+            text-align: center;
+
+            q {
+                @include footerText;
+                font-family: $font;
+                font-size: 20px;
+                color: $color-1;
+                margin-bottom: 10px;
+            }
+        }
+
+        &.bottom {
+            justify-content: center;
+            margin-top: 40px;
+            border-top: 1px solid $color-1;
+            padding: 10px $defaultZero;
+
+            p {
+                @include footerText;
+                font-family: $font;
+                font-size: 18px;
+                color: $color-1;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+    }
+}

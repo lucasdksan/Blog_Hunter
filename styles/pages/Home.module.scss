@@ -1,0 +1,314 @@
+@import "../themes/index";
+
+.main {
+  width: 100%;
+
+  section {
+    width: 100%;
+    height: 100vh;
+    background-color: $color-2;
+    position: relative;
+
+    &.contentResumeHardSkills {
+      display: none;
+      height: auto;
+      width: 100%;
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: $TabletSize;
+        gap: 80px 15px;
+        margin: 0px auto;
+
+        padding: 100px 20px;
+      }
+
+      @media(max-width: $deskSizeM) {
+        display: block;
+      }
+    }
+
+    &.projects {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px $defaultZero;
+      height: auto !important;
+
+      .container {
+        background-image: url("/assets/Dots.png");
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+
+        h2 {
+          margin-bottom: 40px;
+        }
+
+        .containerNav {
+          width: 100%;
+          margin-bottom: 50px;
+
+          ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px 0px;
+
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 10px 40px;
+              border: 3px solid $border-1;
+              border-radius: 67px;
+              margin: $defaultZero 20px;
+              &:hover {
+                cursor: pointer;
+                background-color: $color-5;
+                border: 3px solid $color-5;
+
+                span {
+                  color: $color-link;
+                }
+              }
+
+              span {
+                @include lineText;
+                font-family: $font;
+                color: $color-1;
+              }
+            }
+          }
+        }
+
+        .areaCards {
+          width: 100%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 15px 30px;
+          flex-wrap: wrap;
+
+          @media(max-width: $TabletSizeM){
+            gap: 15px 10px;
+          }
+
+          @media(max-width: $deskSize) {
+            justify-content: center;
+          }
+        }
+
+        .areaControllCards {
+          margin-top: 20px;
+
+          span {
+            cursor: pointer;
+
+            &.not {
+              opacity: 0.8;
+            }
+
+            &.active {
+              opacity: 1;
+            }
+
+            &:last-child{
+              margin-left: 10px;
+            }
+
+            &:first-child {
+              margin-right: 10px;
+            }
+
+            svg {
+              width: 35px;
+              height: 35px;
+              color: $color-1;
+            }
+          }
+        }
+      }
+    }
+
+    &.state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px $defaultZero;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 600px;
+        flex: 1;
+
+        h2 {
+          margin-bottom: 25px;
+        }
+
+        .content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+          flex: 1;
+
+          @media(max-width: $TabletSizeM){
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    &.experiences {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px $defaultZero;
+      height: auto !important;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+
+        .content {
+          margin-top: 15px;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px 10px;
+        }
+      }
+    }
+
+    &.hardSkills {
+      display: flex;
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px $defaultZero;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+          margin-bottom: 35px;
+        }
+  
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px 0px;
+  
+          .line {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+
+            &[data-invert="invert"] {
+              @media(max-width: $MobileSize) {
+                flex-direction: column-reverse;
+              }
+            }
+
+            @media(max-width: $MobileSize){
+              flex-direction: column;
+            }
+  
+            .cardsArea {
+              width: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-wrap: wrap;
+              gap: 15px 20px;
+
+              @media(max-width: $MobileSize){
+                width: 65%;
+                gap: 10px 15px;
+              } 
+            }
+            
+            .lottieArea {
+              width: 50%;
+              height: auto;
+
+              @media(max-width: $MobileSize){
+                width: 65%;
+              } 
+            }
+          }
+        }
+      }
+    }
+
+    h2 {
+      @include titleH2;
+      font-family: $font;
+      color: $color-1;
+    }
+
+    .cardBlue {
+      position: absolute;
+      left: $defaultZero;
+      background-color: $color-5;
+      height: 100%;
+      width: 500px;
+
+      @media (max-width: $deskSizeM){
+        width: 380px;
+      }
+
+      @media(max-width: $TabletSizeT) {
+        width: 280px;
+      }
+
+      @media(max-width: $MobileSize) {
+        width: 200px;
+      }
+    }
+
+    .container {
+      max-width: $deskSize;
+      margin: $defaultZero auto;
+      height: 100%;
+    }
+
+    .containerCards {
+      position: absolute;
+      left: 40%;
+      bottom: 2%;
+      display: inline-flex;
+
+      @media(max-width: $deskSizeM){
+        display: none;
+      }
+    }
+  }
+}

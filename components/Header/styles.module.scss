@@ -1,0 +1,147 @@
+@import "../../styles/themes/index";
+
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: $deskSize;
+    margin: $defaultZero auto;
+    position: fixed;
+    top: $defaultZero;
+    right: $defaultZero;
+    left: $defaultZero;
+    background-color: transparent;
+    z-index: 1000;
+
+    @media(max-width: $TabletSizeT){
+        
+    }
+
+    nav {
+        background-color: $color-4;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-radius: 25px;
+        overflow: hidden;
+
+        @media(max-width: $TabletSizeT) {
+            display: none;
+        }
+
+        &.active {            
+            padding-left: 25px;
+
+            ul {
+                display: inline-flex;
+            }
+        }
+
+        ul {
+            display: none;
+
+            li {
+                margin: $defaultZero 29px;
+
+                @media(max-width: $TabletSizeM) {
+                    margin: $defaultZero 15px;
+                }
+
+                @media(max-width: $TabletSizeT) {
+                    margin: $defaultZero 10px;
+                }
+
+                &:first-child {
+                    margin-left: $defaultZero;
+                }
+
+                &:last-child {
+                    margin-right: $defaultZero;
+                }
+
+                a {
+                    @include textNavigation;
+                    font-family: $font;
+                    font-size: 16px;
+                    color: $color-1;
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $color-hover;
+                    }
+                }
+            }
+        }
+
+        .openBtn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: $color-4;
+            color: $color-1;
+            cursor: pointer;
+
+            &:hover {
+                svg {
+                    color: $color-hover;
+                }
+            }
+    
+            svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+
+    .openBtn_mob {
+        display: none;
+        width: 50px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $color-4;
+        color: $color-1;
+        cursor: pointer;
+
+        @media(max-width: $TabletSizeT){
+            display: flex;
+        }
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    @media(max-width: $deskSize){
+        max-width: $deskSizeM;
+    }
+
+    @media(max-width: $deskSizeM){
+        max-width: $TabletSize;
+    }
+
+    @media(max-width: $TabletSize){
+        max-width: $TabletSizeM;
+    }
+
+    @media(max-width: $TabletSizeM){
+        max-width: $TabletSizeT;
+    }
+
+    @media(max-width: $TabletSizeT){
+        max-width: $MobileSize;
+    }
+
+    @media(max-width: $MobileSize) {
+        max-width: $MobileSizeM;
+    }
+}

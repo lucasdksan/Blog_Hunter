@@ -1,5 +1,16 @@
-# Blog Hunter :computer:
+# Blog Pessoal.
 
-## Descrição: 
+- Tecnologias:
 
-Este projeto tem como objetivo apresentar o meu lado profissional ao mundo da tecnologia e, além disso, demonstrar os meus projetos de programação (Front-end, Back-end e Mobile). Para o desenvolvimento do meu blog eu usei o framework React Js + Typescript, para o estilo usei componentes estilizados. Essas escolhas foram baseadas no meu conhecimento dessas áreas e no meu conforto em usá-las.
+* Next js (SSR).
+* Sass.
+* Typescript.
+* API RESTful (Consumindo a API do GIT).
+
+- Páginas:
+
+* Home (Single Page).
+
+## Motivo.
+
+Criar meu espaço na internet onde posso divulgar meus projetos e resultados de meus estudos individuais. Além disso, use-o como um cartão de boas-vindas para outras pessoas.

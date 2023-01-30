@@ -1,0 +1,51 @@
+@import "../../styles/themes/index";
+
+div.active,
+div.close {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $color-4;
+    padding: 10px 30px;
+    position: fixed;
+    z-index: 800;
+
+    ul {
+        li {
+            margin: 5px $defaultZero;
+            padding: 10px;
+
+            &:first-child {
+                margin-top: $defaultZero;
+            }
+
+            &:last-child {
+                margin-bottom: $defaultZero;
+            }
+
+            a {
+                @include textNavigation;
+                font-family: $font;
+                font-size: 16px;
+                color: $color-1;
+            }
+        }
+    }
+}
+
+div.close {
+    top: -420px;
+    transition: top .6s ease-in;
+}
+
+div.active {
+    top: -420px;
+    transition: top .6s ease-in;
+
+    @media(max-width: $TabletSizeT){
+        top: $defaultZero;
+        transition: top .6s ease-out;
+    }
+}
