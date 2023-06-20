@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { useDate } from "../../libs/useDate";
-import useMyNavigation from "../../libs/useMyNavigation";
+import { dateObj } from "../../libs/dateObj";
+import myNavigation from "../../libs/myNavigation";
 
 import styles from "./styles.module.scss";
 
 const Footer = () => {
-    const { currentDate } = useDate;
+    const { currentDate } = dateObj;
     
     return (
         <footer className={styles.footerContainer}>
@@ -16,15 +16,15 @@ const Footer = () => {
                 <div className={styles.navContent}>
                     <span>Navegação</span>
                     <ul>
-                        <li><a onClick={()=>useMyNavigation("home")}>Home</a></li>
-                        <li><a onClick={()=>useMyNavigation("projects")}>Projetos</a></li>
-                        <li><a onClick={()=>useMyNavigation("about")}>Sobre</a></li>
-                        <li><a onClick={()=>useMyNavigation("experiences")}>Experiências</a></li>
-                        <li><a onClick={()=>useMyNavigation("hard-skills")}>Hard Skills</a></li>
+                        <li><a onClick={()=>myNavigation("home")}>Home</a></li>
+                        <li><a onClick={()=>myNavigation("projects")}>Projetos</a></li>
+                        <li><a onClick={()=>myNavigation("about")}>Sobre</a></li>
+                        <li><a onClick={()=>myNavigation("experiences")}>Experiências</a></li>
+                        <li><a onClick={()=>myNavigation("hard-skills")}>Hard Skills</a></li>
                     </ul>
                 </div>
                 <div className={styles.network}>
-                    <a target="_blank" href="https://github.com/lucasdksan">
+                    <a target="_blank" href="https://github.com/lucasdksan" rel="noopener noreferrer">
                         <Image
                             src="/assets/git.png"
                             alt="X icon"
@@ -33,7 +33,7 @@ const Footer = () => {
                             className={styles.xicon}
                         />
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/lucas_sil_leo/">
+                    <a target="_blank" href="https://www.instagram.com/lucas_sil_leo/" rel="noopener noreferrer">
                         <Image
                             src="/assets/insta.png"
                             alt="X icon"
@@ -42,7 +42,7 @@ const Footer = () => {
                             className={styles.xicon}
                         />
                     </a>
-                    <a target="_blank" href="https://www.linkedin.com/in/lucas-silva-464b45164/">
+                    <a target="_blank" href="https://www.linkedin.com/in/lucas-silva-464b45164/" rel="noopener noreferrer">
                         <Image
                             src="/assets/linkedin.png"
                             alt="X icon"
@@ -51,7 +51,7 @@ const Footer = () => {
                             className={styles.xicon}
                         />
                     </a>
-                    <a target="_blank" href="https://twitter.com/Lucasda24527132">
+                    <a target="_blank" href="https://twitter.com/Lucasda24527132" rel="noopener noreferrer">
                         <Image
                             src="/assets/twitter.png"
                             alt="X icon"

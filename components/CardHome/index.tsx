@@ -33,7 +33,7 @@ const CardHome = ({ link, urlGit }:CardHomeType)=>{
                     </p>
                     <div className={styles.btnArea}>
                         <a className={styles.github} target="_blank" href={urlGit}>Github</a>
-                        <a target="_blank" href="/documents/Lucas_2.pdf" download>Curriculo</a>
+                        <a target="_blank" href="/documents/Lucas_2.pdf" rel="noopener noreferrer" download>Curriculo</a>
                     </div>
                 </div>
             </div>

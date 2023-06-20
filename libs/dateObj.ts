@@ -1,4 +1,4 @@
-const useDate = {
+const dateObj = {
     currentDate: function() {
         const date = new Date();
     
@@ -19,4 +19,4 @@ const useDate = {
     }
 }
 
-export { useDate };
+export { dateObj };

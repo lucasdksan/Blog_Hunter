@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { useDate } from "../../libs/useDate";
+import { dateObj } from "../../libs/dateObj";
 
 import styles from "./styles.module.scss";
 
 const AboutCard = ()=>{
-    const  { getAge } = useDate;
+    const  { getAge } = dateObj;
     
     function MyYear(){
         return `${getAge("1998/11/07")}`;
@@ -14,7 +14,7 @@ const AboutCard = ()=>{
         <div className={styles.container}>
             <div className={styles.topHeader}>
                 <div className={styles.contentIcons}>
-                    <a target="_blank" href="https://github.com/lucasdksan">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/lucasdksan">
                         <Image 
                             src="/assets/git.png" 
                             alt="X icon" 
@@ -23,7 +23,7 @@ const AboutCard = ()=>{
                             className={styles.xicon}
                         />
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/lucas_sil_leo/">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lucas_sil_leo/">
                         <Image 
                             src="/assets/insta.png" 
                             alt="X icon" 
@@ -32,7 +32,7 @@ const AboutCard = ()=>{
                             className={styles.xicon}
                         />
                     </a>
-                    <a target="_blank" href="https://www.linkedin.com/in/lucas-silva-464b45164/">
+                    <a target="_blank"  rel="noopener noreferrer" href="https://www.linkedin.com/in/lucas-silva-464b45164/">
                         <Image 
                             src="/assets/linkedin.png" 
                             alt="X icon" 
@@ -41,7 +41,7 @@ const AboutCard = ()=>{
                             className={styles.xicon}
                         />
                     </a>
-                    <a target="_blank" href="https://twitter.com/Lucasda24527132">
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/Lucasda24527132">
                         <Image 
                             src="/assets/twitter.png" 
                             alt="X icon" 

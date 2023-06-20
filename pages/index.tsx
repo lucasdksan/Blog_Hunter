@@ -24,7 +24,7 @@ import styles from "../styles/pages/Home.module.scss";
 import { HomeTypes } from "../types/HomeType";
 import { FiltedRepoTypes, RepoTypes } from "../types/RepoType";
 
-import { useFilterData } from "../libs/useFilterData";
+import { filterData } from "../libs/filterData";
 
 import { gitHubAPI } from "./api/github";
 
@@ -315,7 +315,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   arryRepos.forEach((element: RepoTypes) => {
     tempArrReposFilted.push(
-      useFilterData(element)
+      filterData(element)
     );
   });
 

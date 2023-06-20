@@ -1,6 +1,6 @@
-import { useDate } from "../libs/useDate";
+import { dateObj } from "../libs/dateObj";
 
-const  { getAge } = useDate;
+const  { getAge } = dateObj;
 
 export const Experiences = [
     {

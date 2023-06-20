@@ -1,4 +1,4 @@
-import { useFilterData } from "../../libs/useFilterData";
+import { useFilterData } from "../../libs/filterData";
 import { FiltedRepoTypes, RepoTypes } from "../../types/RepoType";
 
 const urlRequest = "https://api.github.com/users/lucasdksan/repos";
